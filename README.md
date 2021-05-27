@@ -1,1 +1,1 @@
-# pd-la
+This repository is for pandas and linear algebra.
