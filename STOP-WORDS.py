@@ -1,24 +1,21 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
-
 import itertools
-import umap
-import sklearn
 
 import csv
 import nltk
 import sys
 import fileinput
-import re
 
 from nltk.corpus import stopwords
-stop_words = stopwords.words('english')
+stop = stopwords.words('english')
+csv.field_size_limit(sys.maxsize)
+
 
 in_filename = '/home/mac/Desktop/PD-LA/SW.csv'
 out_filename = '/home/mac/Desktop/PD-LA/SWout.csv'
 
-with open(in_filename, newline=';') as infile, open(out_filename, "w") as outfile:
-    for line in infile.readlines():
-        if not line in stop_words:
-            outfile.write(line)
+with open(in_filename, newline='') as infile, open(out_filename, "w") as outfile:
+    infile = csv.reader(infile, delimiter=';', quotechar='|')
+    outfile = csv.writer(outfile, delimiter=';', quotechar='|')
+    for row in infile:
+#        if row not in stop:
+         outfile.writerows(row)
