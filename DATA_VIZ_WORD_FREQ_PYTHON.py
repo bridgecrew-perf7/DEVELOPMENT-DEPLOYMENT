@@ -8,15 +8,16 @@ import sklearn
 import sys
 import PIL
 
+nltk.download('stopwords')
 csv.field_size_limit(sys.maxsize)
+
 from nltk.corpus import stopwords
 stop = stopwords.words('english')
 
 pd.set_option("display.max_colwidth", 500)
 
-#object with axes and series
-df = pd.read_csv('/home/mac/Desktop/PD-LA/PDTEXT.csv', header=None, engine='python')
+df = pd.read_csv('/home/mac/Desktop/PANDAS-ML/IN.csv', header=None, engine='python')
 
 count = df[0].str.split(';', expand=True).stack().value_counts().plot(kind='bar')
 
-plt.show()
+plt.show(count)

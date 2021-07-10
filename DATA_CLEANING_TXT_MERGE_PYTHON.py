@@ -1,8 +1,5 @@
 import fileinput
 import glob
-import sys
-import fileinput
-
 
 file_list = glob.glob("*.txt")
 
