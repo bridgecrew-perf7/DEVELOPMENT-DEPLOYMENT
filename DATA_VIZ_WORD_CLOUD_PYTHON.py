@@ -14,7 +14,7 @@ import PIL
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import TruncatedSVD
 
-nltk.download('stopwords')
+#nltk.download('stopwords')
 csv.field_size_limit(sys.maxsize)
 
 from nltk.corpus import stopwords
