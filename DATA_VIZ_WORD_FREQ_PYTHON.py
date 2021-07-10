@@ -18,10 +18,10 @@ pd.set_option("display.max_colwidth", 500)
 
 df = pd.read_csv('/home/mac/Desktop/PANDAS-ML/IN.csv', header=None, engine='python')
 
-series = df[0].str.split(';', expand=True).stack().value_counts(normalize=True)
+col = df[0].str.split(';', expand=True).stack().value_counts(normalize=True)
 
-series.plot(kind="bar")
+col.plot(kind="bar")
 
 #plt.show()
-print(df)
-print(series)
+#print(df)
+print(col)
