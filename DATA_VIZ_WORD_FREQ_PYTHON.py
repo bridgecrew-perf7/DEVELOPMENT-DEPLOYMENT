@@ -16,12 +16,14 @@ stop = stopwords.words('english')
 
 pd.set_option("display.max_colwidth", 500)
 
+#get the df
 df = pd.read_csv('/home/mac/Desktop/PANDAS-ML/IN.csv', header=None, engine='python')
 
+#count and visualize
 col = df[0].str.split(';', expand=True).stack().value_counts(normalize=True)
 
-col.plot(kind="bar")
+col.plot(kind="bar").set_xlim(0.01500, 0.0004)
 
-#plt.show()
+plt.show()
 #print(df)
-print(col)
+#print(col)
