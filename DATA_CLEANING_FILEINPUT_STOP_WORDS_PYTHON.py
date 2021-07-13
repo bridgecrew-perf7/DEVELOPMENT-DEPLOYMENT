@@ -21,4 +21,4 @@ words = line.split(";")
 for r in words:
     if not r in stop_words:
         outfile = open(out_filename,"a")
-        outfile.write(" "+r)
+        outfile.write(";"+r)
