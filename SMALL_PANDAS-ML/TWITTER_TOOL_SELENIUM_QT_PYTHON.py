@@ -1,3 +1,11 @@
+#sudo apt update && sudo apt upgrade
+#sudo apt install -y unzip xvfb libxi6 libgconf-2-4
+#wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+#unzip chromedriver_linux64.zip
+#sudo mv chromedriver /usr/bin/chromedriver
+#sudo chown root:root /usr/bin/chromedriver
+#sudo chmod +x /usr/bin/chromedriver
+
 #### IMPORT LIBRARIES ###
 
 #### IMPORT QT ####
@@ -11,6 +19,8 @@ from PyQt5.QtCore import QSize
 
 from selenium import webdriver
 import time
+
+DRIVER_PATH = "/usr/bin/chromedriver"
 
 ### SET SELENIUM WEB DRIVER OPTIONS ####
 
@@ -72,7 +82,7 @@ class MainWindow(QMainWindow):
         connection = self.connection.text()
 
 #### CALL WEB DRIVER EXTENSIVE ####
-        driver = webdriver.Chrome(executable_path='C:/bin/chromedriver')
+        driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
         if connection:
             driver.get("https://www.twitter.com/search?q=" + "from:" + str(target) + " " + "OR" + " " + "to:" + str(target) + " " + "*" + str(topic) + "*" +  " " + "OR" + " " +  "from:" + str(connection) + " " + "OR" + " " + "to:" + str(connection))

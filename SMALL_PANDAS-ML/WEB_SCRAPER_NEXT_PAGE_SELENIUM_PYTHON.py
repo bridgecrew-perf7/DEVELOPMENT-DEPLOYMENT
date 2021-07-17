@@ -1,3 +1,11 @@
+#sudo apt update && sudo apt upgrade
+#sudo apt install -y unzip xvfb libxi6 libgconf-2-4
+#wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+#unzip chromedriver_linux64.zip
+#sudo mv chromedriver /usr/bin/chromedriver
+#sudo chown root:root /usr/bin/chromedriver
+#sudo chmod +x /usr/bin/chromedriver
+
 import csv
 from selenium import webdriver
 
@@ -5,15 +13,15 @@ from selenium.webdriver.common.keys import Keys
 
 import time
 
+DRIVER_PATH = "/usr/bin/chromedriver"
 POST_NUM = 9999999
 
-#create CSV file with headers
+### CREATE CSV ###
 with open('All_Content.csv', 'w') as f:
     f.write('abc \n')
 
-#start webdriver file
-driver = webdriver.Chrome(executable_path=r'C:\bin\chromedriver.exe')
-
+### START WEB DRIVER ###
+driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
 driver.get("https://example.com/")
 

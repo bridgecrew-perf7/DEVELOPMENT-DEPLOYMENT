@@ -1,4 +1,4 @@
-#adjust according to input data
+### ADJUST REGEXPS ACCORDING TO INPUT DATA ###
 
 import numpy as np
 import matplotlib.pyplot as plt

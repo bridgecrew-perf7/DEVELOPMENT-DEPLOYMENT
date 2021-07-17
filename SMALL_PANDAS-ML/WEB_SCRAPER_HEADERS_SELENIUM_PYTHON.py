@@ -1,7 +1,16 @@
+#sudo apt update && sudo apt upgrade
+#sudo apt install -y unzip xvfb libxi6 libgconf-2-4
+#wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+#unzip chromedriver_linux64.zip
+#sudo mv chromedriver /usr/bin/chromedriver
+#sudo chown root:root /usr/bin/chromedriver
+#sudo chmod +x /usr/bin/chromedriver
+
 import csv
 from selenium import webdriver
 
-#define variables to loop through
+DRIVER_PATH = "/usr/bin/chromedriver"
+
 MAX_PAGE_NUM = 387
 MAX_PAGE_DIG = 3
 
@@ -10,7 +19,7 @@ with open('Headers_and_Dates.csv', 'w') as f:
     f.write('Headers; Date \n')
 
 #start webdriver file
-driver = webdriver.Chrome(executable_path=r'C:\bin\chromedriver.exe')
+driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
 #loop through all pages defined in MAX_PAGE_NUM
 for n in range(1, MAX_PAGE_NUM + 1):
