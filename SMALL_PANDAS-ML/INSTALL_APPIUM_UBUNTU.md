@@ -1,4 +1,4 @@
-# Install Appium on Ubuntu
+# Install Appium on Ubuntu 20.4
 * reboot liberally inbetween steps
 ```console
 sudo apt update && sudo apt upgrade
