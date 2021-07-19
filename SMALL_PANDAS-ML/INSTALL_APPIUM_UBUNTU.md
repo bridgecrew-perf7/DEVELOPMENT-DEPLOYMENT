@@ -47,18 +47,18 @@ sdk install java
 * Android SDK Platform-Tools
 ```console
 sdkmanager --install "platforms;android-30"
-sdkmanager -- install "build-tools;30.0.2"
+sdkmanager --install "build-tools;30.0.2"
 sdkmanager --sdk_root=${ANDROID_HOME} "tools"
 sdkmanager --install
 ```
 
 ## Install Node.js and npm
 ```console
-rm package-lock.json && npm i
 sudo npm install
 npm cache clean --force
 npm install -g npm
 npm install
+rm package-lock.json && npm i
 
 sudo chmod -R 755 /usr/local/lib/node_modules/
 sudo chmod 755 /usr/local/bin/node
@@ -88,13 +88,14 @@ sudo npm install -g appium
 sudo npm install -g opencv4nodejs --unsafe-prem --allow-root
 ```
 
-## Optional: Appium Doctor 
+## Set Paths with help from Appium-Doctor 
 ```console
 npm install -g appium-doctor
 appium-doctor
 ```
 * set up  PATHs
 ```console
+locate openjdk
 sudo nano ~/.bashrc
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$ANDROID_HOME/emulator/emulator:$PATH
