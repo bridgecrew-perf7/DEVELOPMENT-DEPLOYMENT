@@ -40,8 +40,7 @@ sdk install java
 ```
 
 ## Install Android Studio and Android SDK
-* Download and install https://developer.android.com/studio/
-* to /opt/android-studio
+* Download and install https://developer.android.com/studio/ to /opt/android-studio
 * Android SDK Build-Tools
 * Android SDK Command-line Tools
 * Android emulator
