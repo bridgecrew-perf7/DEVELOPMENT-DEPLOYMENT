@@ -11,8 +11,6 @@ sudo apt install -y python3-pip python3-dev build-essential libssl-dev libffi-de
 which java
 java --version
 sudo apt install -y openjdk-8-jdk
-sudo update-alternatives --config java
-
 ``` 
 
 * Debugging:
@@ -40,7 +38,6 @@ curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"  
 sdk install java
 ```
-
 
 ## Install Android Studio and Android SDK
 * Download and install https://developer.android.com/studio/
@@ -97,9 +94,22 @@ sudo npm install -g opencv4nodejs --unsafe-prem --allow-root
 npm install -g appium-doctor
 appium-doctor
 ```
-* set up  PATHs in
+* set up  PATHs
 ```console
 sudo nano ~/.bashrc
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$ANDROID_HOME/emulator/emulator:$PATH
+export PATH=$ANDROID_HOME/tools/android:$PATH
+export PATH=$ANDROID_HOME/platform-tools/adb:$PATH
+export PATH=$JAVA_HOME=/usr/share/doc/openjdk-8-jre-headless:$PATH
+export PATH=$JAVA_HOME/bin:$PATH
+
+JAVA_HOME=$(dirname $( readlink -f $(which java) ))
+JAVA_HOME=$(realpath "$JAVA_HOME"/../)
+export JAVA_HOME
+
+sudo update-alternatives --config java
+
 ```
 * temp access fix for screwed PATH: export PATH="/usr/bin:$PATH"
 
