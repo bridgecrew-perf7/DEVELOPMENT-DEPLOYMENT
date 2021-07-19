@@ -11,6 +11,8 @@ sudo apt install -y python3-pip python3-dev build-essential libssl-dev libffi-de
 which java
 java --version
 sudo apt install -y openjdk-8-jdk
+sudo update-alternatives --config java
+
 ``` 
 
 * Debugging:
