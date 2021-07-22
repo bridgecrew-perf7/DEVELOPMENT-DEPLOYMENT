@@ -18,7 +18,7 @@ POST_NUM = 9999999
 
 ### CREATE CSV ###
 with open('All_Content.csv', 'w') as f:
-    f.write('abc \n')
+    f.write('All_Content_: \n')
 
 ### START WEB DRIVER ###
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
