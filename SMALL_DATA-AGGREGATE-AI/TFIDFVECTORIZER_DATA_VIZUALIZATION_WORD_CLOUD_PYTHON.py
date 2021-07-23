@@ -22,7 +22,7 @@ stop_words = stopwords.words('english')
 
 pd.set_option("display.max_colwidth", 500)
 
-df = pd.read_csv('/home/mac/Desktop/PANDAS-ML/IN.csv', header=None, engine='python')
+df = pd.read_csv('/home/mac/Desktop/DATA-AGGREGATE-AI/IN.csv', header=None, engine='python')
 
 wordcloud = WordCloud(max_words=80,margin=0).generate(df.iloc[0,0])
 plt.figure()

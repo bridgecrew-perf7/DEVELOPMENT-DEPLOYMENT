@@ -97,7 +97,7 @@ class MainWindow(QMainWindow):
         connection = self.connection.text()
 
 #### CALL WEB DRIVER DIALOGUE ####
-        driver = webdriver.Chrome(executable_path='C:/bin/chromedriver')
+        driver = webdriver.Chrome(executable_path = DRIVER_PATH)
 
         if connection:
             driver.get("https://www.twitter.com/search?q=" + "from:" + str(target) + " " + "to:" + str(connection) + " " + "*" + str(topic) + "*")

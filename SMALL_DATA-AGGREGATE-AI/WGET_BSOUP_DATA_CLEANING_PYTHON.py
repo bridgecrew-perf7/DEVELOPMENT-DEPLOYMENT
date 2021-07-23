@@ -7,8 +7,8 @@ import re
 import glob
 from bs4 import BeautifulSoup
 
-in_filename = glob.glob('/home/mac/Desktop/TOPARSE/*.html'
-out_filename = '/home/mac/Desktop/PANDAS-ML/OUT.csv'
+in_filename = glob.glob('/home/mac/Desktop/DATA-AGGREGATE-AI/*.html'
+out_filename = '/home/mac/Desktop/DATA-AGGREGATE-AI/OUT.csv'
 
 with open(in_filename, "r") as infile, open(out_filename, "w") as outfile:
     for fi in infile:

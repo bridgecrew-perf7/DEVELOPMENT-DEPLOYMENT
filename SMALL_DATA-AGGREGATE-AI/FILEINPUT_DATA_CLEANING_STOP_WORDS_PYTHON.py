@@ -7,10 +7,9 @@ import nltk
 
 #nltk.download("stopwords")
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
 
-in_filename = '/home/mac/Desktop/PANDAS-ML/IN.csv'
-out_filename = '/home/mac/Desktop/PANDAS-ML/OUT.csv'
+in_filename = '/home/mac/Desktop/DATA-AGGREGATE-AI/IN.csv'
+out_filename = '/home/mac/Desktop/DATA-AGGREGATE-AI/OUT.csv'
 
 stop_words = set(stopwords.words('english'))
 
