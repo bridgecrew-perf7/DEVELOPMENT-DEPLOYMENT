@@ -6,6 +6,8 @@
 #sudo chown root:root /usr/bin/chromedriver
 #sudo chmod +x /usr/bin/chromedriver
 
+#### IMPORT LIBRARIES ####
+
 import csv
 from selenium import webdriver
 

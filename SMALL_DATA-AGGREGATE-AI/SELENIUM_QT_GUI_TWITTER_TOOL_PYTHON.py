@@ -6,7 +6,7 @@
 #sudo chown root:root /usr/bin/chromedriver
 #sudo chmod +x /usr/bin/chromedriver
 
-#### IMPORT LIBRARIES ###
+#### IMPORT LIBRARIES ####
 
 #### IMPORT QT ####
 import sys
@@ -22,7 +22,7 @@ import time
 
 DRIVER_PATH = "/usr/bin/chromedriver"
 
-### SET SELENIUM WEB DRIVER OPTIONS ####
+#### SET SELENIUM WEB DRIVER OPTIONS ####
 
 class MainWindow(QMainWindow):
     def __init__(self):

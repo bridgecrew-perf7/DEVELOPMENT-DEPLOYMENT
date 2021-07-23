@@ -6,6 +6,8 @@
 #sudo chown root:root /usr/bin/chromedriver
 #sudo chmod +x /usr/bin/chromedriver
 
+#### IMPORT LIBRARIES ####
+
 import csv
 from selenium import webdriver
 
@@ -14,14 +16,11 @@ DRIVER_PATH = "/usr/bin/chromedriver"
 MAX_PAGE_NUM = 387
 MAX_PAGE_DIG = 3
 
-#create CSV file with headers
 with open('Headers_and_Dates.csv', 'w') as f:
     f.write('Headers; Date \n')
 
-#start webdriver file
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
-#loop through all pages defined in MAX_PAGE_NUM
 for n in range(1, MAX_PAGE_NUM + 1):
     page_num = (MAX_PAGE_DIG - len(str(n))) * '0' + str(n)
     url = "https://www.example.com/page/" + page_num

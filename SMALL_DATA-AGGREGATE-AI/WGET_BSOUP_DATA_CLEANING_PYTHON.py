@@ -2,6 +2,8 @@
 # --accept-regex urlregex
 # wget -m -k -K -l 10 -w 1 -A .jpg,png,gif,mp3,pfd,docx,doc,csv http://www.example-site.com/
 
+#### IMPORT LIBRARIES ####
+
 import fileinput
 import re
 import glob

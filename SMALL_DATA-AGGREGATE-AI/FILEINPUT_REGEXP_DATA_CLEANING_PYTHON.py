@@ -1,4 +1,4 @@
-#adjust regexps to input data
+#### IMPORT LIBRARIES ####
 
 import fileinput
 import re
