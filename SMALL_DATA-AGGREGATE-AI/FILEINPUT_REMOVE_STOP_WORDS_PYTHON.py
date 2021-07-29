@@ -6,12 +6,23 @@
 ### IMPORT LIBRARIES ###
 
 import fileinput
-import glob
+import re
+import io
+import nltk
 
-in_filename = glob.glob('/home/mac/Desktop/TOMERGE/*.rtf'
-out_filename = '/home/mc/Desktop/RESULT.txt'
+#nltk.download("stopwords")
+from nltk.corpus import stopwords
 
-with open(in_filename, "r") as infile, open(out_filename, "w") as outfile:
-        with open(in_filename) as infile:
-            for line in infile:
-                outfile.write(line)
+in_filename = '/home/mac/Desktop/DATA-AGGREGATE-AI/IN.csv'
+out_filename = '/home/mac/Desktop/DATA-AGGREGATE-AI/OUT.csv'
+
+stop_words = set(stopwords.words('english'))
+
+infile = open(in_filename, "r")
+
+line = infile.read()
+words = line.split(";")
+for r in words:
+    if not r in stop_words:
+        outfile = open(out_filename,"a")
+        outfile.write(";"+r)
