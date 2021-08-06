@@ -10,7 +10,7 @@ sudo apt install -y python3-pip python3-dev build-essential libssl-dev libffi-de
 ```console
 which java
 java --version
-sudo apt install -y openjdk-8-jdk
+sudo apt install -y openjdk-11-jdk
 ``` 
 
 * Debugging:
@@ -52,7 +52,10 @@ sdkmanager --sdk_root=${ANDROID_HOME} "tools"
 sdkmanager --install
 ```
 
-## Install Node.js and npm
+## Install Nodejs from original source
+https://github.com/nodesource/distributions/blob/master/README.md
+
+## Optionally via npm
 ```console
 sudo npm install
 npm cache clean --force
@@ -65,6 +68,19 @@ sudo chmod 755 /usr/local/bin/node
 sudo chown -R $USER /usr/local/lib/node_modules/
 sudo chown -R 1000:1000 "/home/mac/Desktop/.npm
 ````
+
+## Set up PATH variables
+
+Add some directories permanently to the PATH by adding them to the `.bashrc` file.
+
+```shell
+echo 'export ANDROID_HOME=$HOME/Android/Sdk' >> $HOME/.bashrc
+echo 'export PATH=$ANDROID_HOME/emulator:$PATH' >> $HOME/.bashrc
+echo 'export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH' >> $HOME/.bashrc
+echo 'export PATH=$ANDROID_HOME/platform-tools:$PATH' >> $HOME/.bashrc
+echo 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64' >> $HOME/.bashrc
+. ~/.bashrc
+```
 
 ## Install Appium and Appium Desktop:
 
@@ -88,7 +104,7 @@ sudo npm install -g appium
 sudo npm install -g opencv4nodejs --unsafe-prem --allow-root
 ```
 
-## Set Paths with help from Appium-Doctor 
+## Optionally via Appium-Doctor 
 ```console
 npm install -g appium-doctor
 appium-doctor
