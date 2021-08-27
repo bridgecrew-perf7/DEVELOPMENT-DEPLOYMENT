@@ -2,16 +2,18 @@
 #line = re.sub('((www\.[^\s]+)|(https?://[^\s]+))', "", line)
 #line = re.sub('[!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]', "", line)
 #line = re.sub("\d+", "", line)
+#pip install nltk
 
 ### IMPORT LIBRARIES ###
 
 import fileinput
-import glob
+import re
 
-in_filename = glob.glob('/home/mac/Desktop/TOMERGE/*.rtf'
-out_filename = '/home/mc/Desktop/RESULT.txt'
+in_filename = '/home/mac/Desktop/DATA-AGGREGATE-AI/IN.csv'
+out_filename = '/home/mac/Desktop/DATA-AGGREGATE-AI/OUT.csv'
 
 with open(in_filename, "r") as infile, open(out_filename, "w") as outfile:
-        with open(in_filename) as infile:
-            for line in infile:
-                outfile.write(line)
+    for line in infile.readlines():
+        #        line = re.sub(r";", " ", line)
+        line = re.sub(r"\W", " ", line)
+        outfile.write(line)

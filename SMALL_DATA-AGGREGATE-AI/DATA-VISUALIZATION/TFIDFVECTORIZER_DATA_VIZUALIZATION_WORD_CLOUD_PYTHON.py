@@ -1,4 +1,4 @@
-#### IMPORT LIBRARIES ####
+### IMPORT LIBRARIES ###
 
 import numpy as np
 import matplotlib.pyplot as plt

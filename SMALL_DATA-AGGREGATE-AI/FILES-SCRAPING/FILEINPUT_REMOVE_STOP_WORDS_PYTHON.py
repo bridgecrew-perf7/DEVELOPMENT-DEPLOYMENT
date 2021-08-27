@@ -2,6 +2,7 @@
 #line = re.sub('((www\.[^\s]+)|(https?://[^\s]+))', "", line)
 #line = re.sub('[!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]', "", line)
 #line = re.sub("\d+", "", line)
+#pip install nltk
 
 ### IMPORT LIBRARIES ###
 
