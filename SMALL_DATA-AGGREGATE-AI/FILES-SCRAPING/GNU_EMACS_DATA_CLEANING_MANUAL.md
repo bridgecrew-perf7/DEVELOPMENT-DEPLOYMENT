@@ -128,11 +128,12 @@ C-x C-f
 ~
 open emacs in folder
 M-x shell
-ls or ll
-C-x d
+ls or lld
+C-x d ENTER
 m mark
+% m mark by regexp
 u unmark
-U unmark
+U unmark all
 C copy
 R rename
 D delete
@@ -168,64 +169,8 @@ restart emacs
 Alt+x eval-buffer
 Alt+x load-file
 ```
-emacs data cleaning delimiter = ";"
-```elisp
-(defun clean()
-  (interactive)
-  (let ($begin $end)
-    (if (use-region-p)
-        (setq $begin (region-beginning) $end (region-end))
-      (setq $begin (point-min) $end (point-max)))
-    (save-excursion
-      (save-restriction
-        (narrow-to-region $begin $end)
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward "\t+" nil "move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward "\W+" nil "move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward "\s+" nil "move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward "\n+" nil "move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward "\Cg" nil move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward "\Ca+" nil move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward "" nil move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward "]|-^" nil move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward "[!"#$%&\'()*+,./:;<=>?@[\_`{|}~0-9]+" nil move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-min))
-          (while (re-search-forward ";+" nil move")
-            (replace-match ";")))
-        (progn
-          (goto-char (point-max))
-          (while (equal (char-before) 32)
-            (delete-char -1))))
-      (message "!!! FINISHED !!!"))))
-```
-emacs remove stop words delimiter = ";"
-```elisp
+use emacs web browser
+```console
+M-x eww
 
 ```

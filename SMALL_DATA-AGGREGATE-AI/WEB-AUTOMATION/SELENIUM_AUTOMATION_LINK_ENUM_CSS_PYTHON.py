@@ -12,15 +12,17 @@
 import csv
 from selenium import webdriver
 
+
 DRIVER_PATH = "/usr/bin/chromedriver"
+driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
 MAX_PAGE_NUM = 387
 MAX_PAGE_DIG = 3
 
+
 with open('Headers_and_Dates.csv', 'w') as f:
     f.write('Headers; Date \n')
 
-driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
 for n in range(1, MAX_PAGE_NUM + 1):
     page_num = (MAX_PAGE_DIG - len(str(n))) * '0' + str(n)

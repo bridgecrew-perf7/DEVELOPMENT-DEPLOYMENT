@@ -11,9 +11,7 @@
 
 import csv
 from selenium import webdriver
-
 from selenium.webdriver.common.keys import Keys
-
 import time
 
 DRIVER_PATH = "/usr/bin/chromedriver"
@@ -25,7 +23,6 @@ with open('All_Content.csv', 'w') as f:
 
 ### START WEB DRIVER ###
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-
 driver.get("https://example.com/")
 
 for n in range(1, POST_NUM):
@@ -36,3 +33,4 @@ for n in range(1, POST_NUM):
             f.write(content[k].text)
     driver.find_element_by_xpath("/html/body/table/tbody/tr[2]/td[2]/div[1]/a[1]").click()
     time.sleep(2)
+driver.close()
