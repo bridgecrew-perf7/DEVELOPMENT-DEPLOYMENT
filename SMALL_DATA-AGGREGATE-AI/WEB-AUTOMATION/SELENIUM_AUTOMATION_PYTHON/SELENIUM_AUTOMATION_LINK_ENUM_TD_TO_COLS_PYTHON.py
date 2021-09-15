@@ -19,7 +19,7 @@ driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
 
 with open('FILE.csv', 'w') as f:
-    f.write('ID;NAME;POSITION;INFO;\n')
+    f.write('ID;NAME;POSITION;INFO\n')
 
 page_num = 56
 
@@ -36,7 +36,6 @@ for n in range(-1, page_num ):
             p = p + 1
             if p % 4 == 0:
                f.write("\n")
-            
+
     time.sleep(1)
 driver.close()
-

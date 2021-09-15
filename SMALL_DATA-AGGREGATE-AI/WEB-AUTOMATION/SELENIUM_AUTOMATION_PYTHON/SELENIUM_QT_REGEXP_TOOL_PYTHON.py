@@ -22,6 +22,8 @@ from PyQt5.QtCore import QSize
 
 REGEXP = '(freedom\w{0,10})|(soci[ea]\w{0,10})|(social\w{0,10})|(\sunivers\w{0,10})|(commun\w{0,10})|(\smulti\w{0,10})|(entire\w{0,10})|(\stogeth\w{0,10})|(\sunit\w{0,10})|(everyone\w{0,10})|(democr\w{0,10})|(equal\w{0,10})|(raci[sa][ml]\w{0,10})|(fairn\w{0,10})|(justic\w{0,10})|(empow\w{0,10})|(world\w{0,10})|(citiz\w{0,10})|(progress\w{0,10})|(archai\w{0,10})|(moder\w{0,10})|(whole\w{0,10})|(ethn?ic\w{0,10})|(pride\w{0,10})|(proud\w{0,10})|(sex\w{0,10})|(oppress\w{0,10})|(revoluti\w{0.10})'
 
+DRIVER_PATH = "/usr/bin/chromedriver"
+
 ### IMPORT SELENIUM WEB DRIVER ####
 
 
@@ -41,7 +43,7 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
 
         self.setMinimumSize(QSize(680, 120))
-        self.setWindowTitle("REGEXP FETCH AND COUNT")
+        self.setWindowTitle("QT REGEXP TOOL")
 
 ### INSERT LINK QLABEL AND QLINE EDIT ###
 
@@ -68,7 +70,7 @@ class MainWindow(QMainWindow):
 
 ### START WEB DRIVER HEADLESS  ###
 
-        driver = webdriver.Chrome(executable_path='~/.bin/chromedriver')
+        driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
 ### GET LINK FROM INPUT LINKINSERT AND STORE BODY TAG IN VARIABLE ###
 

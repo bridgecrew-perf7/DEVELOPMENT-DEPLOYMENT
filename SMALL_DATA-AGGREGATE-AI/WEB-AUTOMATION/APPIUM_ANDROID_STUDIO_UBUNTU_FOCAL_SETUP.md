@@ -11,7 +11,7 @@ sudo apt install -y python3-pip python3-dev build-essential libssl-dev libffi-de
 which java
 java --version
 sudo apt install -y openjdk-11-jdk
-``` 
+```
 
 * Debugging:
 ```console
@@ -33,7 +33,7 @@ sudo reboot
 ```
 
 ## Optional: Use SDKman to install openjdk
-```console 
+```console
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"  
 sdk install java
@@ -87,8 +87,8 @@ echo 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64' >> $HOME/.bashrc
 ```console
 sudo npm install -g appium@latest --unsafe-perm=true --allow-root
 ```
-* Download and install https://github.com/appium/appium-desktop/releases 
-```console 
+* Download and install https://github.com/appium/appium-desktop/releases
+```console
 chmod +x Appium-linux-1.21.0.AppImage`
 mkdir -p ~/Android/Appium
 mv Appium-linux-1.21.0.AppImage ~/Android/Appium/
@@ -104,7 +104,7 @@ sudo npm install -g appium
 sudo npm install -g opencv4nodejs --unsafe-prem --allow-root
 ```
 
-## Optionally via Appium-Doctor 
+## Optionally via Appium-Doctor
 ```console
 npm install -g appium-doctor
 appium-doctor
@@ -131,13 +131,23 @@ sudo update-alternatives --config java
 
 ## Install Chrome and Chrome-Driver
 ```console
+sudo apt update && sudo apt upgrade
+sudo apt install -y unzip xvfb libxi6 libgconf-2-4
+sudo apt install python3-pip
+
+pip install selenium
+
+wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/bin/chromedriver
+sudo chown root:root /usr/bin/chromedriver
+sudo chmod +x /usr/bin/chromedriver
+```
+```console
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
-google-chrome --version
+sudo apt install google-chrome-stable
 ```
-* Download version at https://chromedriver.chromium.org/downloads
-```console
-sudo unzip chromedriver_linux64.zip -d /usr/local/bin
 ```
 ## Set Desired Capabilities as .json
 ```json
@@ -151,5 +161,5 @@ sudo unzip chromedriver_linux64.zip -d /usr/local/bin
   "newCommandTimeout": 0,
   "appPackage": "com.myapp.android.alpha",
   "appActivity": "com.myapp.android.ui.activity.LoginActivity"
-} 
+}
 ```
