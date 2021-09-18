@@ -12,8 +12,9 @@
 import csv
 from selenium import webdriver
 
-
+#from definitions import DRIVER_PATH
 DRIVER_PATH = "/usr/bin/chromedriver"
+
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
 MAX_PAGE_NUM = 387

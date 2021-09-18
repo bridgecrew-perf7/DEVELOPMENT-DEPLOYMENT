@@ -21,6 +21,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 import time
 
+#from definitions import DRIVER_PATH
 DRIVER_PATH = "/usr/bin/chromedriver"
 
 class MainWindow(QMainWindow):

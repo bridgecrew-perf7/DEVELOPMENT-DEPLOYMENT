@@ -14,6 +14,8 @@ from selenium import webdriver
 import time
 
 p = 0
+
+#from definitions import DRIVER_PATH
 DRIVER_PATH = "/usr/bin/chromedriver"
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 

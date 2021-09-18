@@ -14,6 +14,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
+#from definitions import DRIVER_PATH
 DRIVER_PATH = "/usr/bin/chromedriver"
 POST_NUM = 9999999
 
