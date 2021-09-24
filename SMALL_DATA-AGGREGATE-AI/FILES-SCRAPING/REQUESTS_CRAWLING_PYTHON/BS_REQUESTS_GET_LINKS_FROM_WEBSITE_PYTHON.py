@@ -3,7 +3,6 @@
 from bs4 import BeautifulSoup
 import requests
 
-
 def get_links(url):
     response = requests.get(url)
     data = response.text

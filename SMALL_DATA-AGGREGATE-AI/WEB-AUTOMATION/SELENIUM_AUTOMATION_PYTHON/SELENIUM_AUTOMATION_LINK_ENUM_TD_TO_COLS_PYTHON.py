@@ -18,6 +18,7 @@ p = 0
 #from definitions import DRIVER_PATH
 DRIVER_PATH = "/usr/bin/chromedriver"
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'})
 
 
 with open('FILE.csv', 'w') as f:

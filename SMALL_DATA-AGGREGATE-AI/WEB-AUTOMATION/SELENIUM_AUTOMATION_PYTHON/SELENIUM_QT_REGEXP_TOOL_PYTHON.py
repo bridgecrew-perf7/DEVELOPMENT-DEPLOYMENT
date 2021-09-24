@@ -11,6 +11,7 @@
 
 import time
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import re
 import csv
 
@@ -69,9 +70,13 @@ class MainWindow(QMainWindow):
     def clickMethodRate(self):
         entered_LINK = self.LINKInsert.text()
 
-### START WEB DRIVER HEADLESS  ###
+### OPTIONS HEADLESS START WEB DRIVER ###
+        options = Options()
+        options.add_argument('--start-maximized')
+        options.headless = True
 
         driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+        driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'})
 
 ### GET LINK FROM INPUT LINKINSERT AND STORE BODY TAG IN VARIABLE ###
 

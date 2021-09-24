@@ -75,11 +75,14 @@ class MainWindow(QMainWindow):
         topic = self.topic.text()
 
         driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+        driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'})
 
         if topic:
             if target:
                 time.sleep(4)
                 driver.get("https://www.twitter.com/search?q=" + "from:" + str(target) + " " + str(topic)  + " " + "&src=typed_query&f=live")
+                driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'})
+
 # Button Dialogue
     def clickMethodDialogue(self):
 

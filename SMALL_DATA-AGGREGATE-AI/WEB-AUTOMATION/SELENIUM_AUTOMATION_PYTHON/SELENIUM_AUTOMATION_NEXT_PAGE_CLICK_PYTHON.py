@@ -24,6 +24,7 @@ with open('All_Content.csv', 'w') as f:
 
 ### START WEB DRIVER ###
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'})
 driver.get("https://example.com/")
 
 for n in range(1, POST_NUM):
