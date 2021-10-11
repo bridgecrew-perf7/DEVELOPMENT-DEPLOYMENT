@@ -19,10 +19,16 @@ docker compose commands
 sudo docker-compose up -d
 sudo docker-compose logs -f
 ```
+docker network commands
+```
+sudo docker network ls -s
+sudo docker network create dock-net
+
+```
 docker commands
 ```console
 sudo docker run
-sudo container ls -a
+sudo docker container ls -a
 sudo docker container ls --filter "status=exited"
 sudo docker container ls -a --filter "ancestor=image_name"
 sudo docker container ls -a -q --filter "ancestor=ubuntu"
@@ -31,5 +37,11 @@ sudo docker container ls -a-s
 sudo docker container NAME stop
 sudo docker images
 sudo docker-compose down --volumes
+```
+docker container commands
+```
+sudo docker exec -it XXX bin/bash
+exit
+docker stop XXX
 
 ```

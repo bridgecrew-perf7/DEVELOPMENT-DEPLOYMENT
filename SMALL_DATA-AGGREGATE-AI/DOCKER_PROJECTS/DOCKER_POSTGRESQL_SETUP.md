@@ -21,6 +21,24 @@ docker-compose.yml
 cd /dockerbuild/postgresbuild
 nano Dockerfile
 ```
+
+## Docker PostgreSQL Compose YAML file
+```yaml
+version: "3"
+
+services:
+  db:
+    image: "postgres:14.0"
+    restart: "always"
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "secret"
+    ports:
+      - "5432:5432"
+```
+
+
 ## Docker PostgreSQL Commands
 ```console
 sudo docker exec -it postgres_database_1 bash
