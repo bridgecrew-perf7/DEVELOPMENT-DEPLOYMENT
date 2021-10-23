@@ -1,2 +1,3 @@
-# ALGOEXPERT
-This repository seeks to collect and solve interview centric algorithm questions.
+# DATA-AGGREGATE-AI
+
+This repository is a collection of small to large applications that solves cases of web scraping, web automation, data purification and artificial intelligence applications.
