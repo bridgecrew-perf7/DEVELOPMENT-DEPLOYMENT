@@ -1,5 +1,5 @@
 # Pandas Cheat Sheet
-install pip, numpy, pandas
+install pip numpy and pandas
 ```python3
 sudo apt install python3-pip
 pip install numpy

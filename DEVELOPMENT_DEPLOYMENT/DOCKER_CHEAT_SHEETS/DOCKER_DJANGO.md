@@ -64,3 +64,6 @@ docker swarm init --advertise-addr 192.168.99.100
 docker info
 docker node ls
 ```
+## Dockerfile best practices
+```console
+```
