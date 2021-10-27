@@ -6,14 +6,14 @@
 
 ### IMPORT LIBRARIES ###
 
-import fileinput
 import re
 
 in_filename = './IN.csv'
 out_filename = './OUT.csv'
 
 with open(in_filename, "r") as infile, open(out_filename, "w") as outfile:
-    for line in infile.readlines():
+    data = infile.readlines()
+    for line in data:
         #        line = re.sub(r";", " ", line)
         line = re.sub(r"\W", " ", line)
         outfile.write(line)

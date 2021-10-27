@@ -6,7 +6,6 @@
 
 ### IMPORT LIBRARIES ###
 
-import fileinput
 import re
 import io
 import nltk

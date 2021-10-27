@@ -1,16 +1,17 @@
 # Docker Best Practice Cheat Sheet Python
 
 _Always use and read OFFICIAL DOCKER HUB https://hub.docker.com/_
+_OS > Docker Engine > Containers (read write, 1 App = 1 Container) > Image Layers (read only, must exist) > Dockerfile_
 
 ## All Minimized, No Frills, Resilient, Fractal, Clean and Secure Images
 1. Use multi-stage building in Dockerfile FROM>COP>RUN>COPY... #FROM>COPY>RUN
-2. Do not run unnecessary Dockerfile commands FROM>ENV>COPY>RUN>COPY...
+2. Do not run layer-redundant Dockerfile commands FROM>ENV>COPY>RUN>COPY...
 2. No secrets in Docker Container
 3. No ROOT in Docker Container
 4. Use .dockerignore File
 5. Use slimmest "-slim" available working shelf Docker Images
 6. Use && Commands
-7. Use COPY, not ADD
+7. Never use ADD
 8. Sequentialize ENTRYPOINT and CMD Commands
 8. Run one logical process per Docker Container
 9. Limit memory and processor per Docker Container
@@ -20,8 +21,11 @@ _Always use and read OFFICIAL DOCKER HUB https://hub.docker.com/_
 13. Use Docker Swarm (for secrets)
 14. Use Docker Scan
 15. Use Docker Content Trust
+16. Use supervisord
+17. Use CI/CD Git versioning
 
 ## Examples
+multiple stages dockerfile
 ```
 # temp stage
 FROM python:3.9-slim as builder
@@ -49,6 +53,7 @@ COPY --from=builder /app/requirements.txt .
 
 RUN pip install --no-cache /wheels/*
 ```
+layer-complementary dockerfile command order
 ```
 FROM python:3.9-slim
 
@@ -60,6 +65,7 @@ RUN pip install -r /requirements.txt
 
 COPY sample.py .
 ```
+expressive clear commands
 ```
 RUN apt-get update && apt-get install -y \
     git \
@@ -73,22 +79,13 @@ RUN addgroup --system app && adduser --system --group app
 
 USER app
 ```
-```
-# copy local files on the host  to the destination
-COPY /source/path  /destination/path
-ADD /source/path  /destination/path
-
-# download external file and copy to the destination
-ADD http://external.file/url  /destination/path
-
-# copy and extract local compresses files
-ADD source.file.tar.gz /destination/path
-```
+use entrypoint primarily, command supplementary
 ```
 ENTRYPOINT ["gunicorn", "config.wsgi", "-w"]
 CMD ["4"]
 gunicorn config.wsgi -w 4
 ```
+label docker images distinctively and descriptively
 ```
 Project name: web
 Environment name: prod
@@ -96,6 +93,7 @@ Git commit hash: a072c4e5d94b5a769225f621f08af3d4bf820a07
 Semantic version: 0.1.
 docker build -t web-prod-a072c4e5d94b5a769225f621f08af3d4bf820a07-0.1.4 .
 ```
+make use of extensive docker ignorefile
 ```
 .dockerignore
 **/.git
@@ -112,14 +110,16 @@ docker-compose.yml
 **/venv
 **/env
 ```
+pass secret into docker container when building it
 ```
 docker build --no-cache --progress=plain --secret id=mysecret,src=secrets.txt .
 ```
+limit memory, cpu
 ```
 version: "3.9"
 services:
   redis:
-    image: redis:alpine
+    image: redis
     deploy:
       resources:
         limits:

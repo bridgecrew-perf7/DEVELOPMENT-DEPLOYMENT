@@ -1,13 +1,5 @@
 # Docker and Docker Compose Docker Swarm manual Ubuntu
 
-1. Docker layers all images on top of the base image and reuses them
-2. There are images, builds, containers, running processes and networks
-3. Dockerfile to specify close app layering, base image etc
-3. docker-compose.yml for each functonal unit including the Dockerfiles, images, networks etc
-4. Use supervisord
-5. Use CI/CD Git versioning
-6. file structure: /docker-builds/project-modules/module-builds/dockerbuild/docker-compose.yml, appbuild/Dockerfile
-
 ## Docker setup
 ```console
 sudo apt update
