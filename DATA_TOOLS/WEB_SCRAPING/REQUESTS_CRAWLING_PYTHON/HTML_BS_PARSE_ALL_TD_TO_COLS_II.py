@@ -1,3 +1,6 @@
+#pip install bs4
+#pip install pandas
+
 from bs4 import BeautifulSoup as bs
 from csv import reader
 import pandas as pd

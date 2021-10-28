@@ -1,3 +1,5 @@
+#pip install bs4
+
 ### IMPORT LIBRARIES ###
 
 from bs4 import BeautifulSoup

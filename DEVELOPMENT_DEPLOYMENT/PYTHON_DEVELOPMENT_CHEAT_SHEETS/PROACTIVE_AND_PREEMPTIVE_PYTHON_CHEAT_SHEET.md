@@ -1,17 +1,20 @@
 # Proactive and Preemptive Python Cheat Sheet
 
-_LINT, DOCUMENT, HANDLE, LOG, TEST & DEBUG LIKE A PRO!_
-_Proactive Python Example: Make easy debugging likely_
-_Preemptive Python Example: Make security breach unlikely_
+_LINT, DOCUMENT, HANDLE, LOG, TEST & DEBUG LIKE A PRO!_  
 
-## Python PEP Linter
-```
-```
-## Document Code With PyDoc
-```
+_Proactive Python Example: Make easy debugging likely_  
 
+_Preemptive Python Example: Make security breach unlikely_  
+
+_Use https://explainshell.com/!_  
+
+## Lint for PEP!
 ```
-## Exception Handling
+```
+## Generate Documentation!
+```
+```
+## Omnipresent Exception Handling!
 use built in exceptions
 ```
 try:
@@ -23,22 +26,19 @@ except Exception:
 
 finally:
 ```
-## Python Logging
+## Extensive Logging!
 ```
-
 ```
-## Python Testing
+## Real life Automation Testing!
 ```
-
 ```
-## Python Debugger
+## Python Debugging with python modules and linux commands
 ```
-
-```
-## Python Debugging with modules and linux commands
-```
-import pprint
+find / -name '*.py' -exec grep -l "keyword" {} \;
+grep -iaR
+du
+find
 dir()
 data()
-
+pprint()
 ```

@@ -13,20 +13,18 @@ esc key
 ```
 window
 ```console
+G
 gg
 e
 b
-/string
-?string
+/forward
+?backward
+#
 n
 N
 $
-G
-$
-g_
 CTRL+u
 CTRL+d
-CTRL+w
 ```
 copy paste delete undo redo
 ```console
@@ -34,6 +32,8 @@ yy
 p
 P
 11yy
+x
+D
 dd
 22dd
 u
@@ -56,4 +56,7 @@ execute
 :w!file.txt
 :r file.txt
 :sh
+:h
+:make
+:e filename
 ```

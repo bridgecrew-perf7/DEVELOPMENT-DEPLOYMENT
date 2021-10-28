@@ -75,6 +75,10 @@
 ## Security and legacy aware development
 restrictive permissions
 ```
+chmod 644 file; owner can read or write the file, others can only read it
+chmod 600 file; owner can read or write the file, others can’t do anything with it
+chmod 755 file; owner can read, write, or execute the file, others can read or execute it This is typically used for programs or for directories
+chmod 700 file; owner can read, write, or execute the file, others can’t do anything with it
 ```
 restrictive environment variables
 ```
@@ -87,16 +91,18 @@ set shebang
 ```
 #!/usr/bin/env setshebang
 ```
-set expressive synopsis
+compelling complete code structure
 ```
-# <set synopsis>
 #
-# separate methods
-# separate classes
-# separate exception handling
-# separate main
+# copyright
+# version
+#
+# classes
+# methods
+# main
+#
 ```
 set expressive comments
 ```
-# Class to do X
+# X Class does Y
 ```
