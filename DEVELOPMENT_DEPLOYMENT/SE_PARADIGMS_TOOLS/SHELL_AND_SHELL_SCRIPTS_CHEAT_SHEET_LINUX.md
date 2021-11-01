@@ -45,13 +45,6 @@ sed
 rsync
 ```console
 ```
-grep
-```console
-grep -iaR
-```
-find
-```console
-```
 stdin (0) stdout (1) stderr (2)
 ```console
 2>/dev/null

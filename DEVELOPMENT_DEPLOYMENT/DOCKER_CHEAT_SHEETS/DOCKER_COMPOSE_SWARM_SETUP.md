@@ -1,17 +1,53 @@
-# Docker and Docker Compose Docker Swarm manual Ubuntu
+# Docker and Docker Compose Docker Swarm manual Linux
 
-## Docker setup
+## CentOS 8
+purge docker
+```
+sudo yum remove docker \
+                 docker-client \
+                 docker-client-latest \
+                 docker-common \
+                 docker-latest \
+                 docker-latest-logrotate \
+                 docker-logrotate \
+                 docker-engine
+sudo yum remove docker-ce docker-ce-cli containerd.io
+sudo rm -rf /var/lib/docker
+sudo rm -rf /var/lib/containerd
+```
+install docker
+```
+dnf groupinstall "Development tools"
+sudo yum install -y yum-utils
+sudo yum-config-manager \
+   --add-repo \
+   https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+install docker compose
+```
+sudo curl -L https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo usermod -aG docker username
+# restart server
+```
+## Ubuntu 21.10
 ```console
+sudo purge docker
+sudo install docker
+```
 sudo apt update
 sudo apt upgrade
 sudo apt install docker
 ```
-## Docker Compose setup
+install docker compose
 ```console
 sudo apt install docker-compose
 docker–compose –version
 ```
-docker compose commands
+## Docker Commands
 ```console
 sudo docker-compose up -d
 sudo docker-compose -f /././././docker-compose.module.yml -d
