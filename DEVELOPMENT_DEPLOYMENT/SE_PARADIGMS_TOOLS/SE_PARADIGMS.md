@@ -6,6 +6,65 @@
 3. Supervised Top Down  
 4. Supervised Bottom Up  
 
+## PM Anti Patterns
+1. Blowhard Jamboree: pm reading junk media and pushing the tech stack on the developers
+2. Viewgraph Engineering: devs using automated documentation and viz tools due to lack of time
+3. Death by Planning: downstream problems by too complex scheduling
+4. Fear of Success: mania shortly before hitting success
+5. Corncob: difficult people obstructing the project
+6. Intellectual Violence: using knowledge about a specific subject to intimidate
+7. Irrational Management: indecisiveness and implicit de facto decision making
+8. Smoke and Mirrors: misrepresentations of the tech possibilities in sales
+9. Project Mismanagement: key activities overlooked and chaotic leadership
+10. Throw It over the Wall: guidelines written too literally
+11. Fire Drill: months of boredom due to non-tech stuff and then sudden need to deliver software
+12. The Feud: animosity among pms
+13. E-mail Is Dangerous: email used for sensitive communication
+
+## SE Anti Patterns
+1. The Blob: procedural blob class; solution: isolating the effect of changes
+2. Continuous Obsolescence new releases make compatibility hard; solution: focus on historically constant software
+3. Lava Flow: blocky code pieces inbetween; solution: refactor to smoothen out code reiteratively
+4. Ambiguous Viewpoint: concrete OOAD viewpoints are subjective and mix up interface with implementation; solution: make OOAD interfaces and implementation extremely clear in documentation
+5. Functional Decomposition: lots of function in huge classes; solution: focus on clear oop interfaces and implementation documentation
+6. Poltergeists: sneaky helper classes that are not atomic or distinct; solution: refactor to eliminate
+7. Boat Anchor: useless piece of software for show; solution: do not buy or use
+8. Golden Hammer: familiar technology or concept applied obsessively to many software problems; solution: study alternative technologies and approaches
+9. Dead End: irreversible modfication that leads to no-support policy for code; solution: think twice if no-support policy can be avoided
+10. Spaghetti Code: old ad hoc software structure; solution: refactor liberally and frequently
+11. Input Kludge: ad hoc algorithms are employed for handling program input; solution: keep to concrete system design telos
+12. Walking through a Minefield: original source code contains two to five bugs per line of code; solution: awareness and lots of dirty hands testing
+13. Copypasta Programming: maintenance problems due to copypasta methodology; solution: copypasta carefully
+14. Mushroom Management: policy to keep devs away from sales people; solution: good solution, sales people are wicked social sharks
+
+## SE Design Atoms
+1. Abstract Factory: instance of several families of classes
+2. Builder: separates object construction from its representation
+3. Factory Method: creates instance of several derived classes
+4. Object Pool: recycling objects that are no longer in use
+5. Prototype: fully initialized instance to be copied or cloned
+6. Singleton: class of which only a single instance can exist
+8. Adapter: matches interfaces of different classes
+9. Bridge: separates an object’s interface from its implementation
+10. Composite: tree structure of simple and composite objects
+11. Decorator: adds responsibilities to objects dynamically
+12. Facade: single class that represents an entire subsystem
+13. Flyweight: fine-grained instance used for efficient sharing
+14. Private Class Data: restricts accessor/mutator access
+15. Proxy: object representing another object
+16. Chain of responsibility: way of passing a request between a chain of objects
+17. Command: encapsulate a command request as an object
+18. Interpreter: way to include language elements in a program
+19. Iterator: sequentially access the elements of a collection
+20. Mediator: defines simplified communication between classes
+21. Memento: capture and restore an object's internal state
+22. Null Object: default value of an object
+23. Observer: way of notifying change to a number of classes
+24. State: alter an object's behavior when its state changes
+25. Strategy: encapsulates an algorithm inside a class
+27. Template method: defer the exact steps of an algorithm to a subclass
+28. Visitor: defines a new operation to a class without change
+
 ## Interpreted Programming Language (usually undergirded by C)  
 1. Imperative (structured, procedural (object oriented, event driven, modular))  
 2. Declarative (functional, first-oder logic, higher-order logic)  
@@ -33,7 +92,7 @@
 3. Isolation: Atoms connot conflict with each other  
 4. Durability: No log is ever lost and can be used to reinstate everything  
 
-## 12 FACTOR
+## 12 Factor App
 1. One codebase tracked in revision control, many deploys  
 2. Explicitly declare and isolate dependencies  
 3. Store config in the environment  
@@ -91,7 +150,7 @@ set shebang
 ```
 #!/usr/bin/env setshebang
 ```
-compelling complete code structure
+compelling code structure
 ```
 #
 # copyright
@@ -102,7 +161,7 @@ compelling complete code structure
 # main
 #
 ```
-set expressive comments
+expressive comments
 ```
 # X Class does Y
 ```
