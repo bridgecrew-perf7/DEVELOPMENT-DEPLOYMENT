@@ -3,6 +3,7 @@
 _file suffix is .sh_  
 _remember to chmod a+rx file.sh_  
 _use www.explainshell.com_  
+_kernel bootstaps pseudo terminal, /etc/shells, 4xbins, .profile files; gives manual access to entire linux system starting at "/" directory_
 
 install zshell
 ```console
@@ -13,37 +14,117 @@ sudo apt install zsh
 .zsh shebang
 ```console
 #!/bin/zsh
-
-in python3
+```
+python3
 ```console
 import os
 import time
 os.popen()
 os.system()
 time.asctime()
-exc_type, exc_type, traceback
 ```
-files
+commands
 ```console
 ls -la
-ps
-ps alx
-ps alx | grep ^-
-cd
+ls -Rla
+ls -d
+ln
+ln -s
+ln -s /dev/null florian
+cd ~
+cd /
+cd ..
+cp /file1 /file2 /here
+cat /file1 /file2
 pwd
 mkdir
+rmdir
 touch
 rm
-rm -rf
+rm -r
+mv
+cat
+file
+du
+df -h
+df -i
+ps
+ps alx
+ss
+ping
+dig
+nmap
+ifconfig
+time
+alias
+find . -name file
+grep -iaR
+grep login$ /file
+grep ^d /file
+grep -i -n ~ * 2>/dev/null
+find /etc -type f -exec grep -i -n -H 'login' {} /dev/nul \;
+find /etc -type f fgrep -Hn 'alias...=' {} \; 2> /dev/null
+find /etc -type f 2> /dev/null | xargs fgrep -Hn 'alias...=' 2> /dev/null
+echo $?
+echo *
+echo .*
+chmod # prio d files, no ownership set theory, check with ls -ld, root transcends
+chmod ugo +-= rwx /dir
+chmod ugo +-= rwx file
+chmod u-rwx .
+chmod o-rwx .
+chmod g-rwx .
+chmod ugo-rwx .
+chusr
+editusr
+newusr
+passwd
+su -
+su -l
+id
+groups root
+whereis
+whoami
+which
+whatis
+man
+man awk
+man sed
+man rsync
+set -o extrace
+set -o emacs
+set -o vi
+head
+more
+less
+shred -n 8 -u 
+shred -n 8 -u */*/*/*/*/*/*/*
+dd if=/dev/random of=/dev/sdb
+dd if=/dev/zero of=/dev/sdb
+dd if=/dev/urandom of=/dev/sdb
+dd if=/dev/zero of=/dev/sdb
+dd if=/dev/random of=/dev/sdb
+dd if=/dev/random of=/dev/sdb
 ```
-awk
+ideos shell 
 ```console
-```
-sed
-```console
-```
-rsync
-```console
+| # std 1 to 0
+; # separator
+< # redirect input
+> # redirect output
+>> # append output to
+? # replace
+[abc] # 1 char
+[!abc] # 1 char 
+\x #escape 
+'string'
+"string\$`" 
+`kdo` # substitute command
+$var ${var}  # var
+(kdo ; kmd) # isolate substitute commands in separate process
+{kdos} # isolate substitute command in same process 
+BL,TAB # blank tab 
+NL # newline
 ```
 stdin (0) stdout (1) stderr (2)
 ```console
@@ -51,6 +132,19 @@ stdin (0) stdout (1) stderr (2)
 > stdout.txt
 1> stdout.txt
 ```
+awk
+```console
+awk -F: '{print $1}' /etc/passwd | while read user
+do
+id $user
+sleep 1
+done
+```
+sed
+```console
+```
+rsync
+```console
 ```
 awk pick from input stream
 ```console

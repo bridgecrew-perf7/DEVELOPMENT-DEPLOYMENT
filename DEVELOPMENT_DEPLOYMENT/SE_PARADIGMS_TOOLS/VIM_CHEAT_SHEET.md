@@ -2,8 +2,6 @@
 ```console
 sudo apt install zsh
 zsh
-```
-```console
 sudo apt install vim
 vim file_name
 ```
@@ -28,17 +26,21 @@ CTRL+d
 ```
 copy paste delete undo redo
 ```console
+c
+w
+cw
 yy
 p
-P
 11yy
 x
+s
 D
 dd
 22dd
 u
 4u
 CTRL+R
+ZZ
 ```
 write
 ```console
@@ -49,14 +51,42 @@ A
 o
 O
 ```
-execute
+last line commands
 ```console
 :wq
 :q!
-:w!file.txt
-:r file.txt
+o
+:r append.txt
 :sh
+:s/old/new/
+:s/old/new/g #entire row
+:1,$s/old/new #1st each column
+:%s/old/new/g #each column, each row
+:%s/old/new/gc #each column, each row, safe mode
 :h
 :make
-:e filename
+:e filename 
+:set
+:! zsh
+exit
 ```
+vim misc
+```
+cd ~ 
+vi .vimrc
+jobs
+
+ps -ef | grep vim
+
+set -o vi
+set -o -emacs
+
+vim -r file
+
+:w file2
+:q!
+diff file file2
+rm .file.swp file2
+
+rm .file.swp
+mv file2 file

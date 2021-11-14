@@ -153,8 +153,11 @@ set shebang
 compelling code structure
 ```
 #
+# name
 # copyright
 # version
+#
+# synopsis
 #
 # classes
 # methods
