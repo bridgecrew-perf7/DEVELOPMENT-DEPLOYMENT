@@ -2,17 +2,16 @@
 
 _LINT, DOCUMENT, HANDLE, LOG, TEST & DEBUG LIKE A PRO_  
 _Proactive Python Example: Make easy debugging likely_  
-_Preemptive Python Example: Make security breach unlikely_  
-_Use https://explainshell.com/_  
+_Preemptive Python Example: Make user churn due to bugs unlikely_  
 
-## Lint for PEP!
+## Lint for PEP, Use Python typing
 ```
 sudo apt install pylint
 ```
-## Generate Documentation!
+## Documentation best practices, Git best practices, Documentation generators
 ```
 ```
-## Omnipresent Exception Handling!
+## Omnipresent Exception error handling, Exception error printing
 list of all built in exceptions
 ```
 Exception
@@ -59,13 +58,17 @@ except TimeoutException as te:
 finally:
     return "string"
 ```
-## Extensive Logging!
+## Extensive Logging
 ```
 ```
-## Real life Automation Testing!
+## Business logic tests, Unit tests, Test driven development
 ```
+1 Business Logic Test = 1 Test Action
+A rrange
+A ct
+A ssert
 ```
-## Python Debugging with Python Modules and Linux commands!
+## Python code debugging with Python modules and Linux commands
 _use prints to divide and conquer, zoom in on the troublemaker in locality (where in the code) and concept (where in the processing of the code). make it transparent_
 ```
 print(f"before function xyz - {dict}")

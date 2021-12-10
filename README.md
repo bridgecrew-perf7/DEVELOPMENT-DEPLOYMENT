@@ -1,2 +1,2 @@
-# DATA-AGGREGATE-AI
-This repository is a collection of code bases that solve cases of web scraping, web automation, data purification, data visualization and web based artificial intelligence applications.
+# DATA-DEV
+This repository is a collection of code bases and cheat sheets that solve cases of full stack development, software engineering best practices, web scraping, web automation, data purification, data visualization and artificial intelligence applications. 
