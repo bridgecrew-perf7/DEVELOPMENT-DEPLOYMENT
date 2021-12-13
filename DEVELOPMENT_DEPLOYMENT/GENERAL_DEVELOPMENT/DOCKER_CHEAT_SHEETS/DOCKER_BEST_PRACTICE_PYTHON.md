@@ -1,4 +1,4 @@
-# Docker Best Practice Cheat Sheet Python
+# Docker Best Practice
 
 _Always use and read OFFICIAL DOCKER HUB https://hub.docker.com/_
 _OS > Docker Engine > Containers (read write, 1 App = 1 Container) > Image Layers (read only, must exist) > Dockerfile_

@@ -1,4 +1,4 @@
-# Docker and Docker Compose Docker Swarm manual Linux
+# Docker Compose Swarm
 
 ## CentOS 8
 purge docker
