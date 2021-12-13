@@ -11,7 +11,7 @@ record single business logic layer customer execution
 see and simple front end element cascade  
 export as linear pytest file  
 
-## 
+##
 
 ##
 
