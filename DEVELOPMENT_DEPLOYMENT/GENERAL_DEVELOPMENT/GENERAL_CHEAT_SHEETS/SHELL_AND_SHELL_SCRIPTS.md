@@ -3,7 +3,7 @@
 _file suffix is .sh_  
 _remember to chmod a+rx file.sh_  
 _use www.explainshell.com_  
-_kernel bootstaps pseudo terminal, /etc/shells, 4xbins, .profile files; gives manual access to entire linux system starting at "/" directory_
+_kernel, params + initramfs boostrap pseudo terminal, /etc/shells, 4xbins, .profile files; gives manual access to entire linux system starting at "/" directory_
 
 install zshell
 ```console
@@ -28,18 +28,29 @@ commands
 ls -la
 ls -Rla
 ls -d
-ln
-ln -s
-ln -s /dev/null florian
+lscpu
+lshw
+alias
+history
+info
+man -a ls
+man # 1 user # 5 commands # 8 admin ls # \^STRING
+ln # hard only files # old # new
+ln -s # soft everything # old # new
+ln -s /dev/null vortex
 cd ~
 cd /
 cd ..
+cp # rename # put inside # put inside dir
 cp /file1 /file2 /here
+cp -r
 cat /file1 /file2
 pwd
 mkdir
 rmdir
-touch
+touch # >
+touch file{1-9000} # bracket expansion
+touch file{A-Z}
 rm
 rm -r
 mv
@@ -50,24 +61,29 @@ df -h
 df -i
 ps
 ps alx
+ps aux
 ss
 ping
 dig
 nmap
 ifconfig
 time
-alias
+diff
 find . -name file
-grep -iaR
-grep login$ /file
-grep ^d /file
-grep -i -n ~ * 2>/dev/null
+find / -inum 123456 2> /dev/null
 find /etc -type f -exec grep -i -n -H 'login' {} /dev/nul \;
 find /etc -type f fgrep -Hn 'alias...=' {} \; 2> /dev/null
 find /etc -type f 2> /dev/null | xargs fgrep -Hn 'alias...=' 2> /dev/null
+grep -iaR
+grep login$ /file
+grep ^d /file
+grep -i -n ~ * 2> /dev/null
 echo $?
 echo *
 echo .*
+echo $HOSTNAME
+echo $(tty) # command substitution
+echo $[5+7]
 chmod # prio d files, no ownership set theory, check with ls -ld, root transcends
 chmod ugo +-= rwx /dir
 chmod ugo +-= rwx file
@@ -79,25 +95,25 @@ chusr
 editusr
 newusr
 passwd
-su -
-su -l
+su # keep shell
+su - # new login shell
+sudo -i # act like root
+sudo visudo # ls -l /etc/sudoers
 id
 groups root
 whereis
 whoami
 which
 whatis
-man
-man awk
-man sed
-man rsync
 set -o extrace
 set -o emacs
 set -o vi
 head
 more
 less
-shred -n 8 -u 
+tr
+lynx file.html
+shred -n 8 -u
 shred -n 8 -u */*/*/*/*/*/*/*
 dd if=/dev/random of=/dev/sdb
 dd if=/dev/zero of=/dev/sdb
@@ -106,25 +122,47 @@ dd if=/dev/zero of=/dev/sdb
 dd if=/dev/random of=/dev/sdb
 dd if=/dev/random of=/dev/sdb
 ```
-ideos shell 
+1 char filters
 ```console
+# Regexp sets
+[^abc]
+[!abc]
+[abc]
+# POSIX sets
+[[:alpha:]]
+[[:digit:]]
+[[:alnum:]]
+[[:upper:]]
+[[:punct:]]
+[[:space:]]
+```
+shell meta commands
+```console
+[optional]
+{mandatory}
 | # std 1 to 0
 ; # separator
 < # redirect input
 > # redirect output
->> # append output to
+>> # redirect append output
+2>&1 #input and output redirect
 ? # replace
 [abc] # 1 char
-[!abc] # 1 char 
-\x #escape 
+[!abc] # 1 char
+\x #escape
 'string'
-"string\$`" 
+"string\$`"
 `kdo` # substitute command
 $var ${var}  # var
 (kdo ; kmd) # isolate substitute commands in separate process
-{kdos} # isolate substitute command in same process 
-BL,TAB # blank tab 
+{kdos} # isolate substitute command in same process
+BL,TAB # blank tab
 NL # newline
+CTRL + A, E
+CTRL + U, K
+Alt + U
+Alt + L
+Shift + 7
 ```
 stdin (0) stdout (1) stderr (2)
 ```console

@@ -55,7 +55,7 @@ sudo docker-compose logs -f
 sudo docker-compose down --volumes
 sudo docker-compose -f docker-compose.postgres.yml exec postgres bash
 psql -U <database username you want to connect with> -d <database name>
-
+docker-compose down && docker-compose up --build -d && docker-compose logs --follow
 ```
 docker network commands
 ```console
