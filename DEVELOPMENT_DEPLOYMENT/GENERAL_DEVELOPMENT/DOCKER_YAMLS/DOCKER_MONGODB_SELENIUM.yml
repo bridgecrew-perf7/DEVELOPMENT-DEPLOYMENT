@@ -1,0 +1,42 @@
+version: "3.5"
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+  front-end:
+    build: .
+    restart: always
+    ports:
+      - "80:8080"
+    depends_on:
+      - mongo
+    volumes:
+    - "./config/worker.prod.json:/app/config/worker.json"
+  selenium-hub:
+    image: selenium/hub:4.0.0-20211013
+    expose:
+      - "4442"
+      - "4443"
+    ports:
+      - "4444:4444"
+  chrome:
+    image: selenium/node-chrome:4.0.0-20211013
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_GRID_URL=http://localhost:4444
+    ports:
+      - "6900-6905:5900"
+    deploy:
+      replicas: 10
+volumes:
+  mongo-data:

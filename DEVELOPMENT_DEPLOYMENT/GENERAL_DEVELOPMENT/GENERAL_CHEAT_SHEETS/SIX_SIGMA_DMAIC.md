@@ -1,4 +1,4 @@
-# Six Sigma DMAIC cheat sheet
+# Six Sigma DMAIC
 
 DOCUMENT EACH STEP AND DECISION HEAVILY
 

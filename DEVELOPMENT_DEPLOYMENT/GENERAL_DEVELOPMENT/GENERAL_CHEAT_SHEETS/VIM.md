@@ -9,10 +9,17 @@ meta command
 ```
 esc key
 ```
-window
+window movement
 ```console
-G
 gg
+G
+CTR+u
+CTR+d
+k
+j
+h
+l
+w
 e
 b
 /forward
@@ -20,13 +27,13 @@ b
 #
 n
 N
+0
 $
-CTRL+u
-CTRL+d
 ```
 copy paste delete undo redo
 ```console
 c
+C
 w
 cw
 yy
@@ -34,6 +41,7 @@ p
 11yy
 x
 s
+r
 D
 dd
 22dd
@@ -41,6 +49,10 @@ u
 4u
 CTRL+R
 ZZ
+d 0
+d $
+d G
+d ap
 ```
 write
 ```console
@@ -59,20 +71,20 @@ o
 :r append.txt
 :sh
 :s/old/new/
-:s/old/new/g #entire row
-:1,$s/old/new #1st each column
-:%s/old/new/g #each column, each row
-:%s/old/new/gc #each column, each row, safe mode
+:s/old/new/g # entire row
+:1,$s/old/new # 1st each column
+:%s/old/new/g # each column, each row
+:%s/old/new/gc # each column, each row, safe mode
 :h
 :make
-:e filename 
+:e filename
 :set
 :! zsh
 exit
 ```
 vim misc
 ```
-cd ~ 
+cd ~
 vi .vimrc
 jobs
 

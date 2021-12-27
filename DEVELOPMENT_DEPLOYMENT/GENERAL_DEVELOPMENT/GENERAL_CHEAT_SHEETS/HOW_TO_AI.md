@@ -1,4 +1,4 @@
-# How to AI cheat sheet
+# How to AI
 
 1) What REAL WORLD PHENOMENA in form of ENTITIES (datasets or clusters of datasets) do I want to IDENTIFY, GENERATE, PROJECT on past/future with, or what hypotheses about them do I want FALSIFY to generate PROFIT?  
 

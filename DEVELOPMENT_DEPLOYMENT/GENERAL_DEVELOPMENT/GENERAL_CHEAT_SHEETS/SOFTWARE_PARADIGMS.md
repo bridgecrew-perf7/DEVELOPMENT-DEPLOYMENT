@@ -142,9 +142,9 @@ chmod 700 file; owner can read, write, or execute the file, others can’t do an
 restrictive environment variables
 ```
 export PATH=$PATH:set_clean_paths
-.bash_profile
-.bashrc
-.profile
+~/.bash_profile
+~/.bashrc
+~/.profile
 ```
 set shebang
 ```
