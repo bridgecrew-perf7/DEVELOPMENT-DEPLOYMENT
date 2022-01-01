@@ -72,7 +72,6 @@ A ssert
 _use prints to divide and conquer, zoom in on the troublemaker in locality (where in the code) and concept (where in the processing of the code). make it transparent_
 ```
 print(f"before function xyz - {dict}")
-print(f"inside function xyz - {dict}")
 print(f"after function xyz - {dict}")
 find / -name '*.py' -exec grep -l "keyword" {} \;
 grep -iaR

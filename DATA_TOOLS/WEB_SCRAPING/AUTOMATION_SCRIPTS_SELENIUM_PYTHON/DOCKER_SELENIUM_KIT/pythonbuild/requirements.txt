@@ -1,0 +1,5 @@
+selenium == 3.141.0
+random_user_agent == 1.0.1
+psutil == 5.8.0
+selenium-stealth
+bs4
