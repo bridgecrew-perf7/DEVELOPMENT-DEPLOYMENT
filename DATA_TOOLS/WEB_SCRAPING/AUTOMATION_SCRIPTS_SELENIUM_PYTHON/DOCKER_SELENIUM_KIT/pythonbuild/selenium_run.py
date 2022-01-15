@@ -41,7 +41,6 @@ from selenium_stealth import stealth
 
 # xpaths constants
 BUTTON_CONSENT = '//*[@id="CybotCookiebotDialogBodyButtonAccept"]'
-BUTTON_NEXT = '//*/nav/ul/li[12]'
 
 
 def handle_cookie_consent_popup(driver):
@@ -84,7 +83,7 @@ def Selenium_Run(driver, URL):
     handle_cookie_consent_popup(driver)
     random_wait(3, 5)
 
-    with open('./PRE_CSV/This.csv', 'a', encoding='utf-8', errors='replace') as f:
+    with open('./This.csv', 'a', encoding='utf-8', errors='replace') as f:
 
         try:
             page_num = 1000
@@ -116,10 +115,6 @@ def Selenium_Run(driver, URL):
 
                 random_wait(11,22)
 
-            # click next
-            #random_wait(20, 40)
-            #click_next(driver)
-            #random_wait(20, 40)
 
         except Exception as e:
             print(traceback.format_exc())
@@ -173,7 +168,7 @@ def main():
     except Exception as e:
         print(traceback.format_exc())
         print(str(e))
-        print("Error Exception after main, reconnecting at running_url")
+        print("Error Exception after main")
 
         #launch lte reconnect
         #Selenium_Run(driver, running_url)

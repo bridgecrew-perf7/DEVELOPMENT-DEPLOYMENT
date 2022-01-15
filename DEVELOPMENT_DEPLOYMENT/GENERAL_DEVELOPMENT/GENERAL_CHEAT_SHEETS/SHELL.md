@@ -37,6 +37,10 @@ tracepath
 ping
 dig
 nmap
+ssh-agent sh -c 'ssh-add; ssh-add -L'
+ssh-add -D
+ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ip
 ip link show
 ip route show
@@ -64,6 +68,13 @@ rsync -avn domain:/
 rsync -av domain:/
 sftp
 cat known_hosts
+ss
+ifconfig
+route
+ping
+traceroute
+iptables
+telnet
 ```
 system
 ```
@@ -278,6 +289,7 @@ echo $(tty)
 echo $(seq 1 100)
 echo $[5+7]
 ```
+```
 awk
 ```console
 awk -F: '{print $1}' /etc/passwd | while read user
@@ -286,11 +298,6 @@ id $user
 sleep 1
 done
 ```
-sed
-```console
-```
-rsync
-```console
 ```
 awk pick from input stream
 ```console

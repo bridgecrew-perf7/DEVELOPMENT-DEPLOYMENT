@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #sudo apt update && sudo apt upgrade
 #sudo apt install -y unzip xvfb libxi6 libgconf-2-4
 #pip install selenium
@@ -124,8 +126,6 @@ class MainWindow(QMainWindow):
 ### INVOKE LINK CLEANER ###
 
                         if link_cleaner(linkurl):
-
-### WRITE EACH DERIVATE LINK TO FILE ###
 
                                 w = whois.whois(str(linkurl))
                                 f.write("Whois of link: " + str(linkurl) + "\n\n")
