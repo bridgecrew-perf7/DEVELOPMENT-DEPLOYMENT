@@ -1,4 +1,4 @@
-# Securing CentOS
+# Securing Linux / CentOS
 
 _Root does not "host"_
 _Disable root SSH_

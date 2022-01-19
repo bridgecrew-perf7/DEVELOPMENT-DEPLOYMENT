@@ -53,8 +53,15 @@ netstat -tuln
 netstat -tulnpa
 nslookup domain.com
 ss
+nc
 host
 dig
+ifconfig
+route
+ping
+traceroute
+iptables
+telnet
 getent hosts
 nmcli
 nmcli connection
@@ -68,15 +75,6 @@ rsync -avn domain:/
 rsync -av domain:/
 sftp
 cat known_hosts
-ss
-ifconfig
-route
-ping
-traceroute
-iptables
-telnet
-```
-system
 ```
 bash config files order
 ```
@@ -94,8 +92,12 @@ id
 1-999
 1000+
 ls -l
-ls -l /hom
+ls -l /home
 ps aux
+ps ef
+ps -aux
+ps -ef
+stat
 useradd -u -g -G -s -c -m
 userdel
 usermod -c 'Peter Baumann' peter
@@ -127,7 +129,6 @@ vi /etc/shadow
 vi /etc/gshadow
 vi /etc/login.devs
 ```
-timedatectl
 ```
 shell commands
 ```console
@@ -172,6 +173,7 @@ ps alx
 ps aux
 crontab
 time
+timedatectl
 tar -cvf etc.tar /etc/
 tar -cvjf etc.tar.bz2 /etc/
 tar -cvZf etc.tar.xz /etc/

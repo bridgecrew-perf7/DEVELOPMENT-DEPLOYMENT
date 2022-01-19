@@ -1,8 +1,20 @@
-# Committed Git Kit
+# Git
 
 _use oh my zsh shell_
+_use https://dangitgit.com/_
 _understand it's for parallel file development and versioning_
-_check out https://dangitgit.com/_
+_Diff3 and Git is for text file comparison. Agile is for segmentation of product development stages with more than one developer_
+_Stakeholder->ProductOwner->Team Lead->Single Developer_
+
+git diff
+```
+git diff [<options>] [<commit>] [--] [<path>…​]
+git diff [<options>] --cached [--merge-base] [<commit>] [--] [<path>…​]
+git diff [<options>] [--merge-base] <commit> [<commit>…​] <commit> [--] [<path>…​]
+git diff [<options>] <commit>…​<commit> [--] [<path>…​]
+git diff [<options>] <blob> <blob>
+git diff [<options>] --no-index [--] <path> <path>
+```
 
 git rollback to first commit
 ```git

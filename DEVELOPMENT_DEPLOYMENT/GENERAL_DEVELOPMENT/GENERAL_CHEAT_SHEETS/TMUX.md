@@ -10,8 +10,10 @@ tmux commands
 ```
 tmux new -s SESSION
 Ctrl + b c
+Ctrl + ,
 Ctrl + b %
 Ctrl + b o
+Ctrl + b p
 Ctrl + b '
 Ctrl + b d
 Ctrl + b (
@@ -27,7 +29,6 @@ tmux at -t SESSION
 tmux attach -t SESSION
 tmux attach-session -t SESSION
 Attach to a session with the name SESSION
-Ctrl + b
 Ctrl + b $
 Ctrl + b ,
 Ctrl + b s
