@@ -1,5 +1,3 @@
-# Docker Compose File Selenium Grid Chrome Standalone
-```console
 version: "3"
 services:
 
@@ -22,4 +20,3 @@ networks:
   default:
     external:
       name: "db"
-```

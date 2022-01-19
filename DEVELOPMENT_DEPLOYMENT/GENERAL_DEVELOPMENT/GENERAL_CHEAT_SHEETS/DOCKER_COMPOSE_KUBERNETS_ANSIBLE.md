@@ -28,7 +28,7 @@ sudo systemctl enable docker
 ```
 install docker compose,
 ```
-CHANGE URL TO NEWEST VERSION FROM https://docs.docker.com/compose/install/ 
+CHANGE URL TO NEWEST VERSION FROM https://docs.docker.com/compose/install/
 REMOVE OLD VERSIONS PRIOR
 sudo curl -L https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
@@ -39,12 +39,21 @@ docker–compose --version
 ## Docker Commands
 ```console
 docker-compose up -d
-docker-compose -f /././././docker-compose.module.yml -d
+docker-compose -f /././././docker-compose.module.yml up --build -d
 docker-compose logs -f
 docker-compose down --volumes
 docker-compose -f docker-compose.postgres.yml exec postgres bash
 psql -U <database username you want to connect with> -d <database name>
 docker-compose down && docker-compose up --build -d && docker-compose logs --follow
+docker-compose exec web bash
+docker-compose exec web python manage.py makemigrations
+docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py shell
+docker-compose exec db psql -U postgres app-name
+docker-compose exec web python manage.py test
+docker-compose exec web npm install
+docker-compose exec web npm run build
+docker-compose exec web npm run dev-watch
 docker run
 docker rmi 123
 docker ps -a
@@ -61,7 +70,7 @@ docker network create dock-net
 docker network prune
 docker network ls
 docker network inspect bridge
-docker network create custombridge 
+docker network create custombridge
 docker run --name netshoot --rm -it --network custombridge nikolaka/netshoot /bin/bash
 ip a | grep ens18
 docker network create -d macvlan --subnet 192.168.0.24 --gateway 192.168.0.1 --ip-range  192.168.0.253/32 -o parent=ens18 custommacvlan
@@ -75,10 +84,11 @@ sudo docker container ls -a-n=-1
 sudo docker container ls -a-s
 sudo docker container NAME stop
 sudo docker container prune
+
 ```
 # Install Kubernetes
 ```
 ```
-# Install Ansbible
+# Install Ansible
 ```
 ```

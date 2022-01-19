@@ -8,7 +8,7 @@ _User content is on different domain_
 _Shelf Object Relational Mapper (ORM)_  
 _Shelf HTML template library (ORM)_
 _Shelf CSRF Tokens_
-_Use DNF where possible_
+_Use DNF whenever possible_
 
 ```
 sudo dnf groupinstall "Development tools"
@@ -69,9 +69,9 @@ dnf install fail2ban -y
 vi /etc/fail2ban/jail.local
 [DEFAULT]
 ignoreip = Your-server-ip
-bantime = 3600
-findtime = 3600
-maxretry = 10
+bantime = 1d
+findtime = 1d
+maxretry = 5
 banaction = iptables-multiport
 backend = systemd
 [sshd]

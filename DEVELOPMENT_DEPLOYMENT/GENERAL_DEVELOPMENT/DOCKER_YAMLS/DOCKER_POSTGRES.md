@@ -1,5 +1,3 @@
-# Docker Compose File PostgreSQL pgAdmin4
-```console
 version: '3.5'
 services:
   postgres:
@@ -45,4 +43,3 @@ networks:
 volumes:
     postgres:
     pgadmin:
-```
