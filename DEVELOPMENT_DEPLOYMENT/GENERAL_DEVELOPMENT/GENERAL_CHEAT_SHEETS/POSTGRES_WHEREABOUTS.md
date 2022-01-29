@@ -1,4 +1,4 @@
-# Python PostgreSQL SQL Pandas Cheat Sheet
+# PostgreSQL Whereabouts
 
 ## PostgreSQL and pgAdmin4 setup Ubuntu
 ```console
@@ -38,7 +38,7 @@ password=string
 port=integer
 ```
 ## PostgreSQL config / connect
-```console
+```python3
 import ConfigParser
 import psycopg
 import config
@@ -66,7 +66,7 @@ def connect():
         params = config()
 
         print('Connecting to the PostgreSQL database...')
-        conn = psycopg2.connect(**params)
+        conn = psycopg.connect(**params)
 
         cur = conn.cursor()
         print('PostgreSQL database version:')
@@ -83,14 +83,14 @@ def connect():
 
         cur.close()
 
-    except (Exception, psycopg2.DatabaseError) as error:
+    except (Exception, psycopg.DatabaseError) as error:
         print(error)
 
     finally:
         if conn is not None:
             conn.close()
             print('Database connection closed.')
-
+```
 ## PostgreSQL commands
 ```console
 psql -U postgres -d postgres
@@ -103,132 +103,22 @@ psql -h localhost -U postgres -d postgres -f inputfile
 \d+ table_name
 \df+ function_name
 \l
+\c
 \c databasename
 \x
+\password
 \q
 ```
-## Postgres SQL Pandas Connection
-```console
-```
-## SQL and Pandas Commands Comparison
-```console
-SQL *ACTS AS* PANDAS
-
-Select * from df
- *ACTS AS*
-df
-
-Select owner from df
-*ACTS AS*
-df[['owner']]
-df.iloc[ : ,2]
-df.loc[ : ,['owner']]
-
-Select * from df limit 2
-*ACTS AS*
-df.head(2)
-
-Select distinct product_name from df
-*ACTS AS*
-df.product_name.unique()
-
-Select * from df where product_name = "pen"
-*ACTS AS*
-df[df['product_name'] == 'pen']
-df.loc[df['product_name']== 'pen']
-df.query('product_name == "pen"')
-df[df.apply(lambda x: x['product_name'] == 'pen', axis=1)]
-
-Select * from df where product_name = "pen" and price = 2
-*ACTS AS*
-df[(df['product_name'] == 'pen') & (df['price']==2)]
-df.loc[(df['product_name']== 'pen') & (df['price'] == 2)]
-df.query('product_name == "pen" and price ==2')
-df[df.apply(lambda x: x['product_name'] == 'pen' and x['price'] == 2, axis=1)]
-
-Select owner, product name from df where product_name = "pen"
-*ACTS AS*
-df[df['product_name'] == 'pen'][['owner','product_name']]
-df.loc[df['product_name']== 'pen', ['owner','product_name']]
-
-Select * from df where product_name like "pen%"
-*ACTS AS*
-df[df['product_name'].str.startswith('pen')]
-df[df['product_name'].str.contains('pen')]
-
-Select * from df where product_name like "%pen"
-*ACTS AS*
-df[df['product_name'].str.endswith('pen')]
-df[df['product_name'].str.contains('pen')]
-
-Select * from df where product_name in ('pen','pencil')
-*ACTS AS*
-df[df['product_name'].isin(['pen','pencil'])]
-
-Select * from df where product_name not in ('pen','pencil')
-*ACTS AS*
-df[~df['product_name'].isin(['pen','pencil'])]
-
-Select count(product_name) from df
-*ACTS AS*
-df['product_name'].count()
-
-Select sum(price) from df
-*ACTS AS*
-df['product_name'].sum()
-
-Select min(price) from df
-*ACTS AS*
-df['product_name'].min()
-
-Select max(price) from df
-*ACTS AS*
-df['product_name'].max()
-
-Select count(price), count(distinct price), sum(price), min(price), max(price) from df
-*ACTS AS*
-df.agg({'price': ['count','nunique','sum','min', 'max']})
-
-Select owner, sum(price) from df group by sum(price)
-*ACTS AS*
-df.groupby('owner').agg({'price':'sum'}).reset_index()
-
-Select owner, product_name, sum(price) from df group by owner, product_name
-*ACTS AS*
-df.groupby(['owner','product_name']).agg({'price':'sum'}).reset_index()
-view raw
-
-Select owner, sum(price) from df group by sum(price) order by sum(price)
-*ACTS AS*
-df.groupby('owner').agg({'price':'sum'}).sort_values(by=['price']).reset_index()
-
-Select owner,count(product_name), sum(price) from df group by owner order by sum(price), count(product_name)
-*ACTS AS*
-df.groupby(['owner']).agg({'price':'sum','product_name':'count'}).sort_values(by=['price','product_name']).reset_index()
-
-Select owner, sum(price) from df group by sum(price) order by sum(price) desc
-*ACTS AS*
-df.groupby('owner').agg({'price':'sum'}).sort_values(by=['price'], ascending = 'FALSE').reset_index()
-
-Select df.owner, product_name, class, teacher from df left join df2 on df.owner = df2.owner
-*ACTS AS*
-pd.merge(df[['owner','product_name']], df2, how="left", on=["owner"])
-
-Select df2.*, product_name, price from df right join df2 on df.owner = df2.owner
-*ACTS AS*
-pd.merge(df, df2, how="right", on=["owner"])
-
-Select df2.*, product_name from df inner join df2 on df.owner = df2.owner
-*ACTS AS*
-pd.merge(df[['product_name','owner']], df2, how="inner", on=["owner"])
-
-Select df2.*, product_name from df outer join df2 on df.owner = df2.owner
-*ACTS AS*
-pd.merge(df[['product_name','owner']], df2, how="outer", on=["owner"])
-```
-
 ## SQL Commands
-```console
+```sql
+Delete Duplicates
+DELETE FROM
+    basket a
+        USING basket b
+WHERE
+    a.id < b.id
+    AND a.fruit = b.fruit;
+
 Create a new role with a username and password:
 CREATE ROLE username NOINHERIT LOGIN PASSWORD password;
 
@@ -439,4 +329,118 @@ WHERE condition;
 Show the query plan for a query:
 EXPLAIN query;
 Show and execute the query plan for a query:
+```
+## SQL *ACTS AS* PANDAS
+```sql
+Select * from df
+ *ACTS AS*
+df
+
+Select owner from df
+*ACTS AS*
+df[['owner']]
+df.iloc[ : ,2]
+df.loc[ : ,['owner']]
+
+Select * from df limit 2
+*ACTS AS*
+df.head(2)
+
+Select distinct product_name from df
+*ACTS AS*
+df.product_name.unique()
+
+Select * from df where product_name = "pen"
+*ACTS AS*
+df[df['product_name'] == 'pen']
+df.loc[df['product_name']== 'pen']
+df.query('product_name == "pen"')
+df[df.apply(lambda x: x['product_name'] == 'pen', axis=1)]
+
+Select * from df where product_name = "pen" and price = 2
+*ACTS AS*
+df[(df['product_name'] == 'pen') & (df['price']==2)]
+df.loc[(df['product_name']== 'pen') & (df['price'] == 2)]
+df.query('product_name == "pen" and price ==2')
+df[df.apply(lambda x: x['product_name'] == 'pen' and x['price'] == 2, axis=1)]
+
+Select owner, product name from df where product_name = "pen"
+*ACTS AS*
+df[df['product_name'] == 'pen'][['owner','product_name']]
+df.loc[df['product_name']== 'pen', ['owner','product_name']]
+
+Select * from df where product_name like "pen%"
+*ACTS AS*
+df[df['product_name'].str.startswith('pen')]
+df[df['product_name'].str.contains('pen')]
+
+Select * from df where product_name like "%pen"
+*ACTS AS*
+df[df['product_name'].str.endswith('pen')]
+df[df['product_name'].str.contains('pen')]
+
+Select * from df where product_name in ('pen','pencil')
+*ACTS AS*
+df[df['product_name'].isin(['pen','pencil'])]
+
+Select * from df where product_name not in ('pen','pencil')
+*ACTS AS*
+df[~df['product_name'].isin(['pen','pencil'])]
+
+Select count(product_name) from df
+*ACTS AS*
+df['product_name'].count()
+
+Select sum(price) from df
+*ACTS AS*
+df['product_name'].sum()
+
+Select min(price) from df
+*ACTS AS*
+df['product_name'].min()
+
+Select max(price) from df
+*ACTS AS*
+df['product_name'].max()
+
+Select count(price), count(distinct price), sum(price), min(price), max(price) from df
+*ACTS AS*
+df.agg({'price': ['count','nunique','sum','min', 'max']})
+
+Select owner, sum(price) from df group by sum(price)
+*ACTS AS*
+df.groupby('owner').agg({'price':'sum'}).reset_index()
+
+Select owner, product_name, sum(price) from df group by owner, product_name
+*ACTS AS*
+df.groupby(['owner','product_name']).agg({'price':'sum'}).reset_index()
+view raw
+
+Select owner, sum(price) from df group by sum(price) order by sum(price)
+*ACTS AS*
+df.groupby('owner').agg({'price':'sum'}).sort_values(by=['price']).reset_index()
+
+Select owner,count(product_name), sum(price) from df group by owner order by sum(price), count(product_name)
+*ACTS AS*
+df.groupby(['owner']).agg({'price':'sum','product_name':'count'}).sort_values(by=['price','product_name']).reset_index()
+
+Select owner, sum(price) from df group by sum(price) order by sum(price) desc
+*ACTS AS*
+df.groupby('owner').agg({'price':'sum'}).sort_values(by=['price'], ascending = 'FALSE').reset_index()
+
+Select df.owner, product_name, class, teacher from df left join df2 on df.owner = df2.owner
+*ACTS AS*
+pd.merge(df[['owner','product_name']], df2, how="left", on=["owner"])
+
+Select df2.*, product_name, price from df right join df2 on df.owner = df2.owner
+*ACTS AS*
+pd.merge(df, df2, how="right", on=["owner"])
+
+Select df2.*, product_name from df inner join df2 on df.owner = df2.owner
+*ACTS AS*
+pd.merge(df[['product_name','owner']], df2, how="inner", on=["owner"])
+
+Select df2.*, product_name from df outer join df2 on df.owner = df2.owner
+*ACTS AS*
+pd.merge(df[['product_name','owner']], df2, how="outer", on=["owner"])
 ```

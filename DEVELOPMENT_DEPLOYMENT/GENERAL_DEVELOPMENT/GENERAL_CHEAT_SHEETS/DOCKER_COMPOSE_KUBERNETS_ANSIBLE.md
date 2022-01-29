@@ -26,7 +26,7 @@ sudo yum install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo systemctl enable docker
 ```
-install docker compose,
+install docker compose
 ```
 CHANGE URL TO NEWEST VERSION FROM https://docs.docker.com/compose/install/
 REMOVE OLD VERSIONS PRIOR
