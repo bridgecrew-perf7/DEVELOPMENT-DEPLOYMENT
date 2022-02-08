@@ -87,18 +87,14 @@ vim misc
 cd ~
 vi .vimrc
 jobs
-
 ps -ef | grep vim
-
 set -o vi
 set -o -emacs
-
 vim -r file
-
 :w file2
 :q!
 diff file file2
 rm .file.swp file2
-
 rm .file.swp
 mv file2 file
+```

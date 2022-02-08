@@ -1,11 +1,11 @@
 # Docker Best Practice
 
-_Always use and read OFFICIAL DOCKER HUB https://hub.docker.com/_
-_OS > Docker Engine > Containers (read write, 1 App = 1 Container) > Image Layers (read only, must exist) > Dockerfile_
+_Use only official docker hub images_
+_Docker knows: Images, Container, Volumes, Networks_
 
 ## All Minimized, No Frills, Resilient, Fractal, Clean and Secure Images
-1. Use multi-stage building in Dockerfile FROM>COP>RUN>COPY... #FROM>COPY>RUN
-2. Do not run layer-redundant Dockerfile commands FROM>ENV>COPY>RUN>COPY...
+1. Use multi-stage building in Dockerfile FROM>STABLE LAYER>VOLATILE LAYER
+2. Do not run layer-redundant Dockerfile commands FROM>ENV>COPY>RUN>COPY
 2. No secrets in Docker Container
 3. No ROOT in Docker Container
 4. Use .dockerignore File
@@ -16,13 +16,12 @@ _OS > Docker Engine > Containers (read write, 1 App = 1 Container) > Image Layer
 8. Run one logical process per Docker Container
 9. Limit memory and processor per Docker Container
 10. Logging to stdout stderr
-11. Use Docker Compose
-12. Use Docker Network
-13. Use Docker Swarm (for secrets)
-14. Use Docker Scan
-15. Use Docker Content Trust
-16. Use supervisord
-17. Use CI/CD Git versioning
+11. Use docker compose
+12. Use docker scan
+13. Use docker Content Trust
+14. Use supervisord
+15. Use docker dive
+16. Use CI/CD Git versioning
 
 ## Examples
 multiple stages dockerfile
