@@ -193,9 +193,26 @@ EXPOSE 80
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 # CONTAINER RUNTIME: ADDS READ WRITE LAYER
+
 ```
 docker compose files
 ```
+version: '3'
+
+services:
+  postgres:
+    image: postgres:12
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data # named volume, volume at /var/lib/docker/volumes
+      - $PWD/pgtest.dump:/docker-entrypoint-initdb.d/init.sql:ro # bind mount mounts db inside to be run as init script, volume located where declared
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 127.0.0.1:5432:5432
+
+volumes:
+  pgdata:
 ```
 install kubernetes
 ```
