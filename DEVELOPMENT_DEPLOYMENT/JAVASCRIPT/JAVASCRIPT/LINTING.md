@@ -1,0 +1,7 @@
+# LINTING
+
+## ESLint
+
+## TSLint
+
+## Babel
