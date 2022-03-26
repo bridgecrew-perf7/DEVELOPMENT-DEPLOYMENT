@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 string_linecount = 0
 full_linecount = 0
 
