@@ -11,6 +11,3 @@ ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 DRIVER_PATH = "./driver/chromedriver"
 #DRIVER_PATH = resource_path("/driver/chromedriver")
-VERSION = "1.0.0"
-
-

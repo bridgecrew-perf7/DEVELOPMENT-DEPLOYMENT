@@ -10,9 +10,7 @@ sudo apt-get install whois
 
 sudo apt update
 sudo apt upgrade
-sudo apt install git
 sudo apt install -y unzip xvfb libxi6 libgconf-2-4
 sudo apt install python3-pip
 
 pip install -r requirements.txt
-pip install selenium
