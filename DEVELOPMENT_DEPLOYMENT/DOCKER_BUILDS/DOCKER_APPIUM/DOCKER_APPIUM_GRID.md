@@ -1,13 +1,6 @@
 version: "3.5"
 
 services:
-  mongo:
-    image: mongo
-    restart: unless-stopped
-    ports:
-      - "28018:28018"
-    volumes:
-      - mongo-data:/data/db
   selenium-hub:
     image: selenium/hub:4.1.1
     expose:

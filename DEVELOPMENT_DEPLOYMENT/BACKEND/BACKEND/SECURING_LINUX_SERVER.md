@@ -1,4 +1,4 @@
-# Securing Linux / CentOS
+# Securing Linux Server
 
 _Root does not "host"_
 _Disable root SSH_
@@ -10,6 +10,24 @@ _Shelf HTML template library (ORM)_
 _Shelf CSRF Tokens_
 _Use DNF whenever possible_
 
+Ubuntu
+```
+hostnamectl set-hostname django-server
+hostname
+vi /etc/hosts
+x.x.x.x django-server
+vi /etc/ssh/sshd_config
+PasswordAuthentication no
+ufw default allow outgoing
+ufw default deny incoming
+ufw allow ssh
+ufw allow http
+ufw allow https
+ufw enable
+ufw status
+scp -r /home/mac/Desktop/app root@x.x.x.x.:/
+```
+Centos
 ```
 sudo dnf groupinstall "Development tools"
 ```
