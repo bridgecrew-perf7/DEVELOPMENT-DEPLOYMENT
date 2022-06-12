@@ -9,12 +9,43 @@ sudo apt install zsh
 sudo apt install net-tools
 sudo apt install nmap
 ```
-basic analysis
+basic
 ```console
 ping
 dig
 ifconfig
 tcpdump
+```
+curl
+```console
+-u
+-A
+-v
+-X
+-d
+-c
+-L
+-b cookiejar
+-c cookiejar
+-b 'n1=v1;n2=v2'
+Send Data
+--data-binary @<filename>
+-d <@filename>
+-d <data>
+-H <header>
+-i
+-l
+-A 'User-Agent-Name'
+6 cannot be resolved
+7 could not connect
+2 timed out
+55 could not send
+56 could not receive
+-v / --verbose
+-m / --max-time
+-k / --insecure
+-s
+-S
 ```
 check public ip
 ```console

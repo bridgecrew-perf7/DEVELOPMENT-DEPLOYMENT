@@ -15,7 +15,6 @@
 - https://semver.org/
 - https://opencontainers.org/
 - https://docs.microsoft.com/en-us/windows/wsl/
-- https://btholt.github.io/complete-intro-to-containers/chroot
 
 ## Install Docker and Docker Compose Centos
 
@@ -65,18 +64,15 @@ rpm rpm -i dive_X.X.X_linux_amd64.rpm
 ```
 docker debugging
 ```console
-docker container prune && docker volume prune
-docker container prune && docker images -a | awk '{print $3}' | xargs docker rmi
-sudo chmod ugo+rwx * # for bind mounts or builds
 docker inspect
 dive IMAGENAME
 docker run --name netshoot --rm -it --network custombridge nikolaka/netshoot /bin/bash
 docker exec -ti container /bin/bash
 docker start -i IMAGENAME
 dive IMAGENAME
-$PWD/pgtest.dump:/docker-entrypoint-initdb.d/init.sql:ro  # bind mount (temp storage only)
-pgdata:/var/lib/postgresql/data # named volume (long term storage)
-docker exec -ti POSTGRES_CONTAINER pg_dump -U postgres postgres > pgtest.dump # postgres docker image backup script
+$PWD/pgtest.dump:/docker-entrypoint-initdb.d/init.sql:ro
+pgdata:/var/lib/postgresql/data
+docker exec -ti POSTGRES_CONTAINER pg_dump -U postgres postgres > pgtest.dump
 ```
 docker image container network volume compose
 ```console
@@ -134,18 +130,6 @@ docker network create -d macvlan --subnet 192.168.0.24 --gateway 192.168.0.1 --i
 docker run --name netshoot --rm -it --network custommacvlan nikolaka/netshoot /bin/bash
 docker run -rm -d --name ngnix2 --network custommacvlan --ip 192.168.0.202 ngnix
 ```
-docker django
-```console
-docker-compose exec web bash
-docker-compose exec web python manage.py makemigrations
-docker-compose exec web python manage.py migrate
-docker-compose exec web python manage.py shell
-docker-compose exec db psql -U postgres app-name
-docker-compose exec web python manage.py test
-docker-compose exec web npm install
-docker-compose exec web npm run build
-docker-compose exec web npm run dev-watch
-```
 linux
 ```console
 id
@@ -201,6 +185,11 @@ for container in $stuck; do
        	sudo zfs create "$zfs_path"-init
 	docker rm "$container"
 done
+
+# systemctl stop stop docker                                                          
+# zfs list -H -o name -t snapshot | grep docker                                       
+# zfs list -H -o name -t snapshot | grep docker | xargs -n1 sudo zfs destroy -R       
+# sudo systemctl start docker
 
 # docker-compose -f docker-compose.yml up --build
 

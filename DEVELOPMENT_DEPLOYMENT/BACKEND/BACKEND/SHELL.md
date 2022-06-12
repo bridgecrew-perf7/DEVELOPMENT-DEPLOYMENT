@@ -1,32 +1,20 @@
 # SHELL
 
-_everything is a file, including directories, everything has got an inode_
-_a process is just a running instance of a file_
-_every user, group has got an id, ids define who's got access to process execution_
-_kernel, params + initramfs boostrap pseudo terminal, /etc/shells, 4xbins, .profile files; gives manual access to entire linux system starting at "/" directory_
+_everything is a file, including directories, everything has got an inode_  
+_a process is just a running instance of a file_  
+_every user, group has got an id, ids define who's got access to process execution_  
+_kernel, params + initramfs boostrap pseudo terminal, /etc/shells, 4xbins, .profile files; gives manual access to entire linux system starting at "/" directory_  
 
 _file suffix is .sh_  
 _remember to chmod a+rx file.sh_  
-_there are lots of different shells, but basics are the same_
+_there are lots of different shells, but basics are the same_   
 _use www.explainshell.com_  
-_always use vim, oh my zshell and tmux_
+_always use vim, oh my zshell and tmux_  
 
-install zshell
+shebangs
 ```console
-sudo apt update
-sudo apt upgrade
-sudo apt install zsh
-```
-.zsh shebang
-```console
-#!/bin/bash```
-python3
-```console
-import os
-import time
-os.popen()
-os.system()
-time.asctime()
+#!/bin/bash
+#!/usr/bin/env python3
 ```
 networks
 ```console

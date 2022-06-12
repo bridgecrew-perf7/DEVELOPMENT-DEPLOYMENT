@@ -1,6 +1,7 @@
 # CI/CD, Proactive, Preemptive Software Delivery
 
-_Isolation, Reproducability, Declarativity, Granularity, Version Control, Source Control, Resource Control_
+_Isolation, Reproducability, Declarativity_  
+_Granularity, Version Control, Source Control, Resource Control_  
 
 Virtualization Advantages:
 - Security (higher isolation)
@@ -8,7 +9,6 @@ Virtualization Advantages:
 - Resource management (higher flexibility, vertical and horizontal)  
 
 Containerization Advantages:
-- Leveraging all above also on App layer through Linux Utilization of:
 - PID, Process Isolation
 - NET, Network Isolation
 - IPC, Inter Process Communication Isolation
@@ -31,17 +31,16 @@ _Implementation Testing, Unit Test, Integration Test, System Test, In Service Te
 
 _Division of Origin and Usage_
 _Shift Left Thinking_
-_DEVELOPMENT SECURITY OPERATION_
+_Dev Sec Ops_
 
 _CI/CD_
 _Continuous: Triggers and Runner_
 _Delivery: Human Inspected Staging Layer_
 _Deployment: Automated Shipping_
-_Development Environment: Gitlab CI/CD: Container Image Registry: Image Staging: Image Deployment_
+_Development Environment: Git, Gitlab, Gitlab Actions: Container Image Registry: Image Staging: Image Deployment_
 
 ## Lint, Compile, Type
 ```
-Linting == Static Code Analysis
 Typescript
 Babel
 black
@@ -51,9 +50,11 @@ yapf
 Pylint
 PyFlakes
 mypy
+Static Code Analysis
 ```
 ## Documentation best practices, Git best practices, Documentation generators
 ```
+Sphinx
 ```
 ## Exception error handling, Exception error printing
 list of all built in exceptions
@@ -104,8 +105,10 @@ finally:
 ```
 ## Extensive Logging, Monitoring
 ```
+Graylog
+Grafana
 ```
-## Testing, CI/CD
+## Testing
 Business Logic Testing  
 Arrange, Act, Assert  
 Optimize for: Quality, Speed, Cost, Security  
@@ -118,7 +121,7 @@ Selenium
 Testing in Container
 Testing as Container Orchestra
 ```
-## Python code debugging with Python debug modules and Linux commands
+## Debugging
 _use prints to divide and conquer, zoom in on the troublemaker in locality (where in the code) and concept (where in the processing of the code). make it transparent_
 ```
 print(f"before function xyz - {dict}")
