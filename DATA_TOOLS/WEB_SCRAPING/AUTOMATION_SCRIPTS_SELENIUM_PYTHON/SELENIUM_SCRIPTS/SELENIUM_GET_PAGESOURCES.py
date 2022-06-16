@@ -140,17 +140,17 @@ def main():
     #options.add_argument('--headless')
     options.add_argument('--disable-extensions')
     options.add_argument("--disable-dev-shm-usage")
-	options.add_argument("--disable-gpu")
-	options.add_argument("--use-gl=swiftshader")
-	options.add_argument("--enable-webgl")
-	options.add_argument("--ignore-gpu-blacklist")
+    options.add_argument("--use-gl=swiftshader")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--enable-webgl")
+    options.add_argument("--ignore-gpu-blacklist")
     options.add_argument("start-maximized")
     options.add_argument("--no-sandbox")
     options.add_argument("--whitelisted-ips=''")
     options.add_argument(f'--user-agent="{get_random_ua()}"')
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-
+    
 #    driver = webdriver.Remote(command_executor="http://chrome:4444/wd/hub", desired_capabilities=desiredCapabilities, options=options)
     driver = webdriver.Chrome(executable_path="./chromedriver")
 

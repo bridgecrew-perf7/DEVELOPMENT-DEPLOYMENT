@@ -1,13 +1,54 @@
-# Network Analysis Cheat Sheet Linux
+# Linux Performance Monitoring Network Analysis Cheat Sheet
 ```
-#tcpdump
-#dig
-#ping
-#ifconfig
-sudo apt install curl
-sudo apt install zsh
-sudo apt install net-tools
-sudo apt install nmap
+apache2-utils
+bash
+bind-tools
+bird
+bridge-utils
+busybox-extras
+calicoctl
+conntrack-tools
+ctop
+curl
+dhcping
+drill
+ethtool
+file
+fping
+httpie
+iftop
+iperf
+iproute2
+ipset
+iptables
+iptraf-ng
+iputils
+ipvsadm
+jq
+libc6-compat
+liboping
+mtr
+net-snmp-tools
+netcat-openbsd
+netgen
+nftables
+ngrep
+nmap
+nmap-nping
+openssl
+py-crypto
+py2-virtualenv
+python2
+scapy
+socat
+strace
+tcpdump
+tcptraceroute
+termshark
+tshark
+util-linux
+vim
+websocat
 ```
 basic
 ```console
