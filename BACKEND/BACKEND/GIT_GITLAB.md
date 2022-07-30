@@ -23,7 +23,6 @@ https://firstaidgit.io/
 https://gitexplorer.com/
 https://learngitbranching.js.org/
 ```
-```
 git set up
 ```
 apt install git-all
