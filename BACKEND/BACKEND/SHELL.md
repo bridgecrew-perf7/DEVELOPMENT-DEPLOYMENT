@@ -18,7 +18,7 @@ shebangs
 ```
 networks
 ```console
-vi etc/services
+vi /etc/services
 last
 w
 traceroute
@@ -191,7 +191,6 @@ tar -cvZf etc.tar.xz /etc/
 tar -x
 tar -tvf etc.tar.gz | less
 tar -x -jvf debian9-rootfs.tar.bz2
-meld
 diff file1 file2 # what to change in file1 to arrive at file 2, < delete > add
 diff file1 file2 -W 60 -y
 diff3 file1 file2 file3 # what to change in file1 to arrive at file 2 AND what to change in file1 to arrive at file3
@@ -512,7 +511,6 @@ subject=”Greetings”
 message=”Welcome to UbuntuPit”
 `mail -s $subject $recipient <<< $message`
 ```
-
 sleep
 ```console
 #!/bin/bash
@@ -521,12 +519,10 @@ read time
 sleep $time
 echo "Waited for $time seconds!"
 ```
-
 print last updated
 ```console
 #!/bin/bashls -lrt | grep ^- | awk 'END{print $NF}'
 ```
-
 staying updated
 ```console
 #!/bin/bashecho -e "\n$(date "+%d-%m-%Y --- %T") --- Starting work\n"
@@ -604,4 +600,357 @@ else
     echo "Only root may add a user to the system"
     exit 2
 fi
+```
+baseline
+```
+/sys/
+/proc/
+/dev/
+modprobe
+lsmod
+lspci
+lsusb
+dmesg
+journalctl
+BIOS
+UEFI
+bootloader
+kernel
+initramfs
+init
+SysVinit
+systemd
+/etc/inittab
+shutdown
+init
+/etc/init.d/
+telinit
+systemd
+systemctl
+/etc/systemd/
+/usr/lib/systemd/
+wall
+/ (root) filesystem
+/var filesystem
+/home filesystem
+/boot filesystem
+EFI System Partition (ESP)
+swap space
+mount points
+partitions
+ldd
+ldconfig
+/etc/ld.so.conf
+LD_LIBRARY_PATH
+/etc/apt/sources.list
+dpkg
+dpkg-reconfigure
+apt-get
+apt-cache
+rpm
+rpm2cpio
+/etc/yum.conf
+/etc/yum.repos.d/
+yum
+zypper
+bash
+echo
+env
+export
+pwd
+set
+unset
+type
+which
+man
+uname
+history
+.bash_history
+Quoting
+bzcat
+cat
+cut
+head
+less
+md5sum
+nl
+od
+paste
+sed
+sha256sum
+sha512sum
+sort
+split
+tail
+tr
+uniq
+wc
+xzcat
+zcat
+cp
+find
+mkdir
+mv
+ls
+rm
+rmdir
+touch
+tar
+cpio
+dd
+file
+gzip
+gunzip
+bzip2
+bunzip2
+xz
+unxz
+file globbing
+&
+bg
+fg
+jobs
+kill
+nohup
+ps
+top
+free
+uptime
+pgrep
+pkill
+killall
+watch
+screen
+tmux
+nice
+ps
+renice
+top
+grep
+egrep
+fgrep
+sed
+regex(7)
+vi
+/, ?
+h,j,k,l
+i, o, a
+d, p, y, dd, yy
+ZZ, :w!, :q!
+EDITOR
+fdisk
+gdisk
+parted
+mkfs
+mkswap
+du
+df
+fsck
+e2fsck
+mke2fs
+tune2fs
+xfs_repair
+xfs_fsr
+xfs_db
+/etc/fstab
+/media/
+mount
+umount
+blkid
+lsblk
+chmod
+umask
+chown
+chgrp
+ln
+ls
+find
+locate
+updatedb
+whereis
+which
+type
+/etc/updatedb.conf
+.
+source
+/etc/bash.bashrc
+/etc/profile
+env
+export
+set
+unset
+~/.bash_profile
+~/.bash_login
+~/.profile
+~/.bashrc
+~/.bash_logout
+function
+alias
+for
+while
+test
+if
+read
+seq
+exec
+||
+&&
+/etc/X11/xorg.conf
+/etc/X11/xorg.conf.d/
+~/.xsession-errors
+xhost
+xauth
+DISPLAY
+X
+KDE
+Gnome
+Xfce
+X11
+XDMCP
+VNC
+Spice
+RDP
+/etc/passwd
+/etc/shadow
+/etc/group
+/etc/skel/
+chage
+getent
+groupadd
+groupdel
+groupmod
+passwd
+useradd
+userdel
+usermod
+/etc/cron.{d,daily,hourly,monthly,weekly}/
+/etc/at.deny
+/etc/at.allow
+/etc/crontab
+/etc/cron.allow
+/etc/cron.deny
+/var/spool/cron/
+crontab
+at
+atq
+atrm
+systemctl
+systemd-run
+/etc/timezone
+/etc/localtime
+/usr/share/zoneinfo/
+LC_*
+LC_ALL
+LANG
+TZ
+/usr/bin/locale
+tzselect
+timedatectl
+date
+iconv
+UTF-8
+ISO-8859
+ASCII
+Unicode
+/usr/share/zoneinfo/
+/etc/timezone
+/etc/localtime
+/etc/ntp.conf
+/etc/chrony.conf
+date
+hwclock
+timedatectl
+ntpd
+ntpdate
+chronyc
+pool.ntp.org
+/etc/rsyslog.conf
+/var/log/
+logger
+logrotate
+/etc/logrotate.conf
+/etc/logrotate.d/
+journalctl
+systemd-cat
+/etc/systemd/journald.conf
+/var/log/journal/
+~/.forward
+sendmail emulation layer commands
+newaliases
+mail
+mailq
+postfix
+sendmail
+exim
+/etc/services
+IPv4, IPv6
+Subnetting
+TCP, UDP, ICMP
+/etc/hostname
+/etc/hosts
+/etc/nsswitch.conf
+/etc/resolv.conf
+nmcli
+hostnamectl
+ifup
+ifdown
+ip
+hostname
+ss
+ping
+ping6
+traceroute
+traceroute6
+tracepath
+tracepath6
+netcat
+ifconfig
+netstat
+route
+/etc/hosts
+/etc/resolv.conf
+/etc/nsswitch.conf
+host
+dig
+getent
+find
+passwd
+fuser
+lsof
+nmap
+chage
+netstat
+sudo
+/etc/sudoers
+su
+usermod
+ulimit
+who, w, last
+/etc/nologin
+/etc/passwd
+/etc/shadow
+/etc/xinetd.d/
+/etc/xinetd.conf
+systemd.socket
+/etc/inittab
+/etc/init.d/
+/etc/hosts.allow
+/etc/hosts.deny
+ssh
+ssh-keygen
+ssh-agent
+ssh-add
+~/.ssh/id_rsa and id_rsa.pub
+~/.ssh/id_dsa and id_dsa.pub
+~/.ssh/id_ecdsa and id_ecdsa.pub
+~/.ssh/id_ed25519 and id_ed25519.pub
+/etc/ssh/ssh_host_rsa_key and ssh_host_rsa_key.pub
+/etc/ssh/ssh_host_dsa_key and ssh_host_dsa_key.pub
+/etc/ssh/ssh_host_ecdsa_key and ssh_host_ecdsa_key.pub
+/etc/ssh/ssh_host_ed25519_key and ssh_host_ed25519_key.pub
+~/.ssh/authorized_keys
+ssh_known_hosts
+gpg
+gpg-agent
+~/.gnupg/
 ```
