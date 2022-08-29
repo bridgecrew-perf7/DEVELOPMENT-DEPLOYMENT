@@ -1,5 +1,0 @@
-# Packet Managing
-
-## NPM
-
-## Yarn
